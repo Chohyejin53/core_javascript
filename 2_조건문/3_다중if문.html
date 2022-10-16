@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 조건문</title>
+    <script>
+        /* 
+            다중if문 (if else if문) : 결과 코드가 3개 이상일 때 사용 
+            if(조건식1) {
+                // 조건식1이 참일 때 표현식
+            } else if (조건식2) {
+                // 조건식2가 참일 때 표현식
+            } else {
+                // 조건식 1,2가 모두 거짓일 때 표현식
+            }
+        */
+
+
+        // 신입사원 연수 점수가 90점 이상이면 [기획팀], 80점 이상이면 [총무팀], 나머지는 [영업팀]으로 보내시오. (경고창출력)
+        
+        var score = prompt('신입사원 연수 점수 입력', '0 ~ 100 사이 정수 입력');
+
+        if(score >= 90) {
+            alert ('기획팀');
+        } else if (score >=80) {  // 실행해서 해당되는 결과 이외의 식에서는 skip 됨! 따라서 중복 결과 나올확률 없음
+            alert ('총무팀');
+        } else {
+            alert('영업팀');
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

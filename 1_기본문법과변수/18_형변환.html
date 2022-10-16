@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+      
+        <title>JS기본문법과 변수</title>
+        <script>
+            // 데이터 유형 변환 - 더하기 계산기 만들기
+            var left = prompt('좌변입력','정수입력'); 
+            var right = prompt('우변입력','정수입력');
+            
+            /*
+                '10' + '10' = '1010'으로 처리
+                alert('결과 : ' + (left + right)) ; 
+            */
+
+            // 문자열을 숫자로 변경 : Number(문자열)
+
+            var result = Number(left) + Number(right);
+            alert('결과 : ' + result);
+
+
+            // 식별자 작성규칙 (ex. 변수명, 함수명, 객체명 등)
+            // 1. 영어 대소문자는 구분 - all ≠ All 
+            // 2. 특수문자는 [_]과 [$]만 사용 가능 
+            // 3. 공백(띄어쓰기)X
+            // 4. 키워드 작성 X
+            
+            // 관례 
+            // 1. 문자는 영어로만 작성
+            // 2. 숫자는 영문 뒤에 작성 
+            // 3. 카멜표기법 : 단어 + 단어 조합 시 : 두번째 단어의 첫글자를 대문자로 사용 ( ex. sum + all => sumAll )
+            //       
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

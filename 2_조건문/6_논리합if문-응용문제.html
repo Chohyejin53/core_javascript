@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 조건문</title>
+    <script>
+        // 사용자에게 월을 입력받아, 마지막일 일자를 경고창에 반환받으시오.
+        
+        var month = prompt('월을 입력하세요','1~12 사이의 정수 입력'); 
+
+        if ( month == 2 ) {
+            alert ('28일 입니다.');
+        } else if (  month == 4 || month == 6 || month == 9 || month == 11) {
+            alert ('30일 입니다.');
+        } else {
+            alert ('31일 입니다.');
+        }
+
+        // || : ~이거나, 혹은, 하나라도 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

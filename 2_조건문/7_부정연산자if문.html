@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 조건문</title>
+    <script>
+        // confirm() : 확인과 취소버튼이 있는 창을 띄우는 함수 
+        // 확인버튼을 누르면 true를 반환, 취소버튼을 누르면 false 반환
+
+        var q = confirm('결제하시겠습니까?');
+
+        // 취소버튼을 눌렀을 때, [취소되었습니다]라는 경고창
+        
+        /* 
+        // 부정연산자 없이는 불필요한 식 입력이 불가피함 
+        if(q) {
+
+        } else {
+            alert('취소되었습니다.');
+        } 
+        */
+
+        if(!q) { // 취소버튼 눌렀을 때 - false인 경우만 처리 
+            alert('취소되었습니다.');
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

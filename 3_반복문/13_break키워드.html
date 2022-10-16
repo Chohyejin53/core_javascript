@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 반복문</title>
+    <script>
+        //break : 반복문을 벗어나는 키워드 
+
+        for (var i = 1; true; i++){
+            alert(i + '번째 반복');
+
+            var q = confirm('계속하시겠습니까?');
+
+            if(!q) { // 취소버튼 눌렀을 떄
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

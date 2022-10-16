@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 반복문</title>
+    <script>
+        // 문제 - 구구단만들기
+
+        /* 
+            ===== 2단 출력 =====
+            2 X 1 = 2
+            ...
+            9 X 9 = 81
+        */
+
+        var output = '';  //구구단을 담는 변수
+
+        // 단을 반복
+        for(var i = 2; i<= 9; i++){
+            output += '=====' + i + '단 출력 =====<br>'
+            
+            // 곱셈반복
+            for(var j =1; j<=9; j++){
+                output += i + ' X ' + j + ' = ' + (i * j) +'<br>' //사칙연산에 따라 우선순위기 정해지지만 시각적 편의를 위해 괄호처리해주기 
+            }
+        }
+
+        // 문서출력
+        document.write(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

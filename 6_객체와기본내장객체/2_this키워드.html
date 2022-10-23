@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 객체</title>
+    <script>
+        //객체선언 
+        var car = {
+            name : '캐스퍼',
+            color : ['white','red','navy','gray'],
+            oil : '가솔린',
+            mileage : 14,
+            start : function(x){
+                if(x == 'on') {
+                    alert(this.name + '시동이 켜졌습니다.');
+                } else if(x == 'off'){
+                    alert(this.name + '시동이 꺼졌습니다.');
+                } 
+            }
+
+        }
+
+        car.start('on');
+    </script>
+</head>
+<body>
+</body>
+</html>

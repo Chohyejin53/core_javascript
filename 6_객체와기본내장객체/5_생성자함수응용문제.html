@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 객체</title>
+    <script>
+        //학생들의 국어, 영어, 수학점수를 통해 평균을 구하시오.
+        //단, 생성자함수를 통해 메모리를 절감하시오. 
+        /* 
+            //생성자함수 - 학생 한명의 평균 점수를 구하는 설계도 작성 
+            function Score (name, korean, english, math){
+                this.name : name;
+                this.korean : korean;
+                this.english : english;
+                this.math : math;
+            }
+
+            Score.prototype.avg = function(){
+                (this.korean + this.english + this.math) / 3 ;
+            }
+
+            //인스턴스 생성
+            var student01 = new Score('홍길동', 90, 80, 75);
+            var student02 = new Score('김영희', 80, 90, 60);
+            var student03 = new Score('이철수', 100, 70, 80);
+
+        
+
+            document.write(student01.avg());
+            document.write(student02.avg());
+            document.write(student03.avg());
+
+            //학생이름 : 홍길동 
+            //평균 : 80점
+        */
+
+            // 틀린이유 
+            // : 매개변수는 소문자로 
+            // : 콜론 말고 등호표시로 표시!!!!
+            // : return으로 반환하기 
+
+
+
+        //풀이
+
+
+         //생성자함수 - 학생 한명의 평균 점수를 구하는 설계도 작성 
+         function Score (name, kor, eng, math){
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+        }
+
+        //평균을 구하는 메서드를 메모리 절감을 위해 프로토타입으로 제작 
+        Score.prototype.avg = function avg(){
+            return "학생이름 : " + this.name + '<br>' + '평균 : ' + ((this.kor + this.eng + this.math) / 3)+ '점 <br>' + '========== <br>';
+
+        }
+        
+        //인스턴스 생성
+        var student01 = new Score('홍길동', 90, 80, 75);
+        var student02 = new Score('김영희', 80, 90, 60);
+        var student03 = new Score('이철수', 100, 70, 80);
+
+       
+
+        document.write(student01.avg());
+        document.write(student02.avg());
+        document.write(student03.avg());
+
+        //학생이름 : 홍길동 
+        //평균 : 80점
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

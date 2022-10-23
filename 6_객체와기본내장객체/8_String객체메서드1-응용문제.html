@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 객체</title>
+    <script>
+        //문제 
+        //사용자에게 주민번호 뒷자리 7자리를 입력받아, 첫글자가 1혹은 3이면 [남자], 2혹은 4이면 [여자], 나머지는 [잘못입력하셨습니다.]를 반환하시오 
+        
+        /* 
+            var num = prompt('주민번호 뒷자리를 입력하세요','7자리 입력');
+            var genderCode = num.charAt(0);
+            
+            if(genderCode == 1 || genderCode == 3 ){ 
+                alert('남자');
+            } else if(genderCode == 2 || genderCode == 4) {
+                alert('여자');
+            } else {
+                alert('잘못입력하셨습니다.');
+            }
+        */
+
+        //풀이 
+        var afterNum = prompt('주민번호 뒷자리를 입력하세요.','7자리입력');
+        var f = afterNum.charAt(0);
+
+        if( f == 1 || f == 3 ) {
+            alert('남자');
+        } else if( f ==2 || f == 4) {
+            alert('여자');
+        } else {
+            alert('잘못입력하셨습니다.');
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

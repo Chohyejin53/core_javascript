@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 객체</title>
+    <script>
+        //문제 
+        //사용자에게 주민번호 앞자리와 뒷자리를 입력받아, 뒷자리의 첫글자가 1 혹은 2면 생년월일을 [ 생일 : 1990년 12월 12일], 3혹은 4면 [생일 : 2010년 12월 12일] 로 출력되게 만드시오.
+        // 단, 1~4 사이 숫자가 아니면 [잘못입력하셨습니다.]라고 경고창을 반환하시오.  
+
+       /*  var num = prompt('주민번호를 입력하세요', '12자리 입력');
+        var beforeNum = num.substr(1,6);
+        var afterNum = num.substr(7,1);
+        var year = num.substr(3,2);
+        var month = num.s
+
+        if( afterNum == 1 || afterNum == 2 ){
+            document.write('생일 : 1990년 12월 12일');
+        } else if( afterNum == 3 || afterNum == 4 ) {
+            document.write('생일 : 2010년 12월 12일');
+        } else {
+            alert('잘못입력하셨습니다.');
+        } */
+
+        // 풀이 
+        var beforeNum = prompt('주민번호 앞자리 입력','6자리입력');
+        var afterNum = prompt('주민번호 뒷자리 입력','6자리입력');
+        var f = afterNum.charAt(0);
+        var y = beforeNum.substr(0,2);
+        var m = beforeNum.substr(2,2);
+        var d = beforeNum.substr(4,2);
+
+        var yearNum; 
+
+        if( f == 1 || f == 2){
+            yearNum = 19;
+
+            alert('생일 : ' + yearNum + y + '년' + m + '월' + d + '일');
+        } else if( f == 3 || f == 4){
+            yearNum = 20;
+
+            alert('생일 : ' + yearNum + y + '년' + m + '월' + d + '일');
+        } else {
+            alert('잘못입력하셨습니다.');
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

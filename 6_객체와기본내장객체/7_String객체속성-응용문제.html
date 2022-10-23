@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 객체</title>
+    <script>
+        //문제
+        //사용자에게 아이디를 입력받아, 8~12글자면, [사용할 수 있는 아이디입니다.] / 그렇지않으면 [8~12 글자로 다시 입력하세요.]라는 경고창을 띄우시오.
+        /* 
+                var userId = prompt('아이디를 입력하세요');
+                
+                if( userId.length < 8 || userId.length > 12){
+                    alert('8~12 글자로 다시 입력하세요.');
+                } else{
+                    alert('사용할 수 있는 아이디입니다.');
+                }
+        */
+
+        
+        //풀이
+        var userId  = prompt('아이디를 입력하세요','8~12글자 사이 입력');
+        if(userId.length >= 8 && userId.length <= 12 ){
+            alert('사용할 수 있는 아이디입니다.');
+        } else {
+            alert('8~12 글자로 다시 입력하세요.');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 객체</title>
+    <script>
+        //Prototype : 같은 속성과 메서드가 메모리를 잡아먹지 않기 위해 나온 것 
+        //생성자함수는 코드블록{} 내부의 속성과 메서드를 인스턴스가 공유 
+        //복사된 객체만큼 계속 코드를 읽어서 메모리를 많이 차지함 
+        //메모리를 많이 차지하지않고 웹을 빠르게 하기 위해 사용
+
+
+        //바뀌지않는 매개변수 영역은 프로토타입으로 분류해서 사용함!!!!
+
+
+
+        // 자동차에 대한 설계도 작성
+        function Mini(model, color, mileage){
+            this.model = model; //같은 이름 쓰는 것이 관례(헷갈리기떄문),  좌 속성명 / 우 매개변수 값
+            this.color = color;
+            this.mileage = mileage;
+        }
+
+        //프로토타입 생성
+        Mini.prototype.starting = function starting(x){  
+            if(x =='on') {
+                alert(this.color + '인' + this.model + '가 시동이 켜졌습니다.');
+            } else if (x =='off') {
+                alert(this.color + '인' + this.model + '가 시동이 꺼졌습니다.');
+            }
+        }
+
+        //인스턴스 - 객체 생성 
+        var mini01 = new Mini('mini 3door', '빨간색', 15);
+        var mini02 = new Mini('mini 컨버터블', '연두색', 17);
+        var mini03 = new Mini('mini 컨트리맨', '회색', 13);
+        
+        mini01.starting('on');
+        mini02.starting('on');
+        mini03.starting('on');
+
+
+        
+
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

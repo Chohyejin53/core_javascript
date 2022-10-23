@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 객체</title>
+    <script>
+        //객체 선언 
+        // 속성 : 객체가 갖고있는 고유한 특성을 기술하는 것 
+        //메서드 : 객체에 주는 명령 혹은 동작 
+        var cat = {
+            name : '야옹이', //속성(property) : 데이터가 함수가 아닌 것
+            type : '코리안숏컷',
+            age : 2,
+            cry : function(){ //메서드(method) : 데이터가 함수인 것
+                alert('야옹야옹');
+            }
+        }
+
+        //객체 전첵 호출
+        alert(cat); //데이터를 호출하지 않음 
+        
+
+        //속성호출 : 객체명.속성명 
+        alert(cat.name);
+
+
+        //메서드 호출 : 객체명.메서드명();
+        cat.cry();
+
+
+        /* 
+            예시 
+            var img = {
+                src : '이미지경로', 
+                alt : '대체텍스트'
+            }
+
+            var 객체명 = {
+                키명(key) : 값(value), 
+                키명(key) : 값(value) 
+            }
+        */
+
+    </script>
+</head>
+<body>
+    <img src="이미지경로" alt="대체텍스트">
+</body>
+</html>

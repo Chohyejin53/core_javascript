@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 함수</title>
+    <script>
+        //매개변수 = 파라미터 = 전달인자 
+        // 매개변수에 var 로 정의하지 않음 but, 다른 컴퓨터언어는 정의해주어야함
+
+
+         //커피사러가는 함수 선언 
+        //선언 - 생각만하고 있는 상태 
+
+        function coffee(store, menu){
+            alert('엘베를탄다');
+            alert(store + '에 간다');
+            alert(menu + '를(을) 시킨다');
+            alert('맛있게마신다');
+        }
+
+        //초기실행
+        // coffee('바나프레소','아이스카페라떼');
+    </script>
+</head>
+<body>
+    <h3>스타벅스</h3>
+    <input type="button" value="아메리카노" onclick="coffee('스타벅스',this.value)">
+    <input type="button" value="카페라떼" onclick="coffee('스타벅스',this.value)">
+    <input type="button" value="카라멜마끼아또" onclick="coffee('스타벅스',this.value)">
+    <input type="button" value="헤이즐럿라떼" onclick="coffee('스타벅스',this.value)">
+</body>
+</html>

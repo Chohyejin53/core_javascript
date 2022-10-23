@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 함수</title>
+    <script>
+        //clearTimeout(변수명); : setTimeout 함수를 중지 
+        //clearInterval(변수명); : setInterval 함수를 중지
+
+
+        var num = 1; //초 숫자를 담는 변수
+        var autoPlay = setInterval(function(){
+            document.write(num + '초가 지났습니다. <br>');
+
+            num++; //1씩 증가
+        },1000);
+
+        //10초 뒤에 멈추는 명령이 한번 발생 
+        setTimeout(function(){
+            clearInterval(autoPlay);
+        },10001); //브라우저별로 속도의 차이가 있어 10초까지는 발행하고 싶기 떄문에 안전하게 10001로 표기
+    </script>
+</head>
+<body>
+
+</body>
+</html>

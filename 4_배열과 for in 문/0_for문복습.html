@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습</title>
+    <script>
+        /* 
+            for(초기식;조건식;증감식) {
+
+            }
+        */
+
+        // 1~31일까지 select 태그로 처리 
+        var output = '<select>'; // 태그로 담을 변수 
+        
+        //옵션 태그 반복 
+        for(var i = 1; i <= 31; i++){
+            output += '<option>' + i + '일 </option>';
+        }
+
+        
+        output += '</select>';
+
+        //문서출력 
+        document.write(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

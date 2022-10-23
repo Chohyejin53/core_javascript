@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 함수</title>
+    <script>
+        // 함수에 문서 출력 담기
+        var x = 1; 
+        function output(){
+            document.write( x + '초가 지났습니다 <br>');
+
+            x++;
+        }
+        //콜백함수 자리에 함수명을 작성해서 명령을 대체할 수 가능!!!
+        //주의 : 콜백이기때문에 함수명 뒤에();붙이지않음!! 
+    
+        setInterval(output, 1000); 
+    </script>
+</head>
+<body>
+    <button onclick="output()">클릭</button>
+</body>
+</html>

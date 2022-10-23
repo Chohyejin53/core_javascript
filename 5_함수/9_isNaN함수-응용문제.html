@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 함수</title>
+    <script>
+        //환율계산기를 만드시오.
+        //경고창에 [환전금액 : XXXX원]
+        //단, 숫자가 아닌 값을 입력하면 [정수로 다시입력하세요]라는 경고창을 띄우시오.
+
+        
+        var doller = 1438;
+        var num = prompt('환전할 달러를 입력하세요','정수입력');
+
+
+        /* 
+        if( isNaN(num) || num < 0 ){
+            alert('정수로 다시 입력하세요.');
+        } else{
+            alert('환전금액 : ' + (num * doller) + '원');
+        } 
+
+
+        틀린 이유 
+        : isNaN는 수식의 결과값에 대해 true/false반환 
+        : 수식이 들어가야함!!!
+        */
+
+        //풀이 
+        if( isNaN(num * doller) ){ //수식이 NaN이면
+            alert('정수로 다시 입력하세요.');
+        } else{
+            alert('환전금액 : ' + (num * doller) + '원');
+        } 
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

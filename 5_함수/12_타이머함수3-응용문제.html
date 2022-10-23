@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 함수</title>
+    <script>
+        //2초마다 [n초가 지났습니다.]라고 문서에 출력하시오.
+        //단 20초까지만 반환하시오.
+
+        /* var num = 2;
+        var timeOut = setInterval(function(){
+            document.write( num +'초가 지났습니다');
+
+            num += 2;
+        },2000);
+
+        setTimeout(function(){
+            clearTimeout(timeOut);
+        }); */
+
+        //틀린이유 
+        //: 정지할때에도 밀리초 입력할 것!! [,]표시빼놓지않고 하기
+        // : 증감 복합연산자 += 사용하기
+
+
+        //풀이 
+        var num = 2;
+        var autoPlay = setInterval(function(){
+            document.write ( num +'초가 지났습니다 <br>' );
+
+            num += 2;
+        },2000);
+
+        setTimeout(function(){
+            clearInterval(autoPlay);
+        },20001);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

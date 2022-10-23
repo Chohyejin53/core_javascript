@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 함수</title>
+    <script>
+        //setInterval(콜백함수, 시간); - 시간 마다 콜백함수 명령을 한번 실행하는 함수 
+
+        //시간(숫자) : 밀리초단위 - 1초 : 1000 (단위 사용하지않음 ex. 1000(0) / 1s(X))
+        //콜백함수(function(){}) : 함수의 매개변수로 사용되는 함수 (호출 코드없이 바로 실행)
+        // 시간마다 실행될 명령이 많을 수 있기 떄문에 함수로 담아줌 
+
+        var num = 1; //초 숫자를 담는 변수
+        setInterval(function(){
+            document.write(num + '초가 지났습니다. <br>');
+
+            num++; //1씩 증가
+        },1000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

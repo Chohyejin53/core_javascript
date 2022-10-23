@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>휴대폰앞자리출력</title>
+    <script>
+        //배열선언 
+        var firstNum = ['010','011','016', '017', '018', '019'];
+
+        var output = '<select>';
+        for(var i in firstNum) {
+            output += '<option>' + firstNum[i] + '</option>';
+        }
+
+        output += '</select>';
+
+        // 문서출력 
+        document.write(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

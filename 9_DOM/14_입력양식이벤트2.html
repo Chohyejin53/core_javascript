@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <input type="checkbox" id="chk01" class="check">
+    <label for="chk01">약관1</label>
+    <br>
+
+    <input type="checkbox" id="chk02" class="check">
+    <label for="chk02">약관2</label>
+    <br>
+
+    <input type="checkbox" id="chk03" class="check">
+    <label for="chk03">약관3</label>
+    <hr>
+
+    <input type="checkbox" id="allChk">
+    <label for="allChk">모두동의</label>
+
+
+    <script>
+        //문서객체선택 
+        var chk01 = document.getElementById('chk01');
+        var chk02 = document.getElementById('chk02');
+        var chk03 = document.getElementById('chk03');
+        var check = document.querySelectorAll('.check');
+        var allChk = document.getElementById('allChk');
+        
+
+        //checked : 체크박스나 라디오버튼에 체크상황을 컨트롤
+        //          true/false로 값을 처리 
+
+        //change : form관련 태그에 값이 변경되었을 때,  
+        allChk.addEventListener('change',function(){
+            var chk = this.checked;
+
+            console.log(chk); //checked상태이면 true/ 아니면 false 반환 
+
+            if(chk){  // 체크가되었다면 
+                for(var i in check) {
+                    check[i].checked = true;
+                } 
+            } else {
+                for(var i in check) {
+                    check[i].checked = false;
+                } 
+            }
+        });
+
+        //각각 체크박스에 Change이벤트 처리 
+        for(var i in check) {
+            check[i].addEventListener('change', function () {
+                if(chk01.checked && chk02.checked && chk03.checked) {
+                    allChk.checked = true;
+                } else { //하나라도 미체크라면 
+                    allChk.checked = false;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

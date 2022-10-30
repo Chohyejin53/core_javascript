@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)</title>
+    
+</head>
+<body>
+    <div id="box">
+        <h1>제목태그</h1>
+        <p>문단태그</p>
+    </div>
+    
+    <script>
+        var box = document.getElementById('box');
+        var h1 = document.querySelector('#box > h1');
+        var p = document.querySelector('#box > p');
+
+        //1. appendChild(요소) : 문서객체의 마지막 자손으로 요소를 추가
+
+        var h2 = document.createElement('h2');
+        h2.textContent = '제목태그2';
+        box.appendChild(h2);
+
+
+        //2. removeChild(요소) :문서객체의 자손을 제거 
+        box.removeChild(p);
+
+        //3. replaceChild(새로운요소, 이전요소) : 이전요소를 새로운 요소로 변경 
+        var h3 = document.createElement('h3');
+        h3.textContent = '제목태그3';
+
+        box.replaceChild(h3,h1);
+
+
+    </script>
+</body>
+</html>  

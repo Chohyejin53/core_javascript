@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <label for="coupon">쿠폰번호입력</label> <br>
+    <input type="text" id="coupon" placeholder="8자입력" maxlength="8">
+
+    <script>
+        //focus : 입력양식 + a태그에 초점을 받았을 때 
+        //blur : 입력양식 + a태그에 초점이 벗어났을 때
+
+        //쿠폰에 초점을 받으면 배경색을 노란색으로, 초점이 벗어나면 흰색으로 처리 
+
+        var coupon = document.getElementById('coupon');
+
+        coupon.addEventListener('focus', function(){
+            this.style.background = "yellow";
+        });
+
+        coupon.addEventListener('blur', function(){
+            this.style.background = "white";
+        });
+
+    </script>
+</body>
+</html>

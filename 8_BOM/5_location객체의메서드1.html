@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+    <script>
+        //location : 주소표시줄 객체
+        //모든 객체는 속성과 메서드를 갖고 있음 
+        //속성문법 : 객체명.속성명
+        //          객체명.속성명 = 값;  //속성값이 변경됨 
+        //메서드 문법 : 객체명.메서드명();
+
+        //assign(url) : 주소표시줄을 매개변수값으로 변경하는 메서드 
+
+        //5초뒤에 네이버로 주소이동하시오.
+        
+        setTimeout(function(){
+            location.assign('https://www.naver.com/');
+        },5000);
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

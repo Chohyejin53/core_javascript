@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)</title>
+    
+</head>
+<body>
+    <!-- 나열해서 태그작성 -->
+    <h1 class="title">제목태그</h1> <!-- 0 -->
+    <h1 class="title">제목태그</h1> <!-- 1 -->
+    <h1 class="title">제목태그</h1> <!-- 2 -->
+
+
+    
+    <script>
+        //문서객체4: CSS선택자로 선택 - 배열로 선택 
+
+        var title = document.querySelector('.title'); //css선택자로 선택해줄것
+        var titleAll = document.querySelectorAll('.title'); //css선택자로 선택해줄것
+        
+        title.style.textDecoration  = 'underline'; //첫번쨰 요소만 선택 - 배열번호 작성 X
+
+        
+        titleAll[0].style.color  = 'red'; 
+        titleAll[1].style.color  = 'green'; 
+        titleAll[2].style.color  = 'blue'; 
+    </script>
+</body>
+</html>

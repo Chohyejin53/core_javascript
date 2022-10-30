@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+    <style>
+        body{
+            height: 3000px;
+            background-color: cadetblue;
+        }
+    </style>
+    <script>
+        //window : 창객체
+        //모든 객체는 속성과 메서드를 갖고 있다! 
+        //속성문법 : 객체명.속성명
+        //메서드문법 : 객체명.메서드명()
+
+
+        //moveTo(x,y) : 창을 절대적 위치로 이동 
+        //moveBy(x,y) : 창을 상대적으로 위치 이동 
+        //resizeTo(w,h) : 창을 절대적 크기로 변환 
+        //resizeBy(w,h) : 창을 상대적 크기로 변환 
+        //close() : 창을 닫는 메서드 
+        //scrollTo() : 창의 스크롤바 위치를 절대적으로 이동
+        //scrollBy() : 창의 스크롤바 위치를 상대적으로 이동
+
+        var w1 = window.open('','','width=300,height=300');
+        
+        w1.moveTo(10,10);
+        
+        //1초마다 위치 이동 
+        setInterval(function(){
+            w1.moveBy(10,10);
+        },1000);
+
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

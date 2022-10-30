@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <h1>제목태그</h1>
+    <h1>제목태그</h1>
+    <h1>제목태그</h1>
+    
+    <script>
+        //mouseenter : 문서객체에 마우스가 들어갔을 떄(자손요소가 있어서 이벤트 중복이 일어나지않음) 
+        
+        //mouseleave : 문서객체에서 마우스가 떠났을 때 (자손요소가 있어서 이벤트 중복이 일어나지 않음)
+
+        //h1에 마우스를 올리면 배경색-검정색, 글자색-노란색 처리
+        //마우스를 내리면 원래대로 처리 
+
+
+        //문서객체선택 
+        var h1 = document.getElementsByTagName('h1');
+
+        for(var i in h1){
+            h1[i].addEventListener('mouseenter', function(){
+                this.style.color = 'yellow';
+                this.style.backgroundColor = 'black';
+            });
+
+            h1[i].addEventListener('mouseleave', function(){
+                this.style.color = 'black';
+                this.style.backgroundColor = 'transparent';
+            });
+        }
+
+    </script>
+</body>
+</html>

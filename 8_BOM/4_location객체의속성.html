@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+    <script>
+        //location : 주소표시줄 객체
+        //모든 객체는 속성과 메서드를 갖고 있음 
+        //속성문법 : 객체명.속성명
+        //          객체명.속성명 = 값;  //속성값이 변경됨 
+        //메서드 문법 : 객체명.메서드명();
+
+        //href : 현재 페이지 주소를 반환하는 속성 
+        
+        alert(location.href);
+        
+        //5초 뒤에 네이버로 이동 
+        setTimeout(function(){
+            location.href = 'https://naver.com';
+        },5000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

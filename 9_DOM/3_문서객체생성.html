@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)</title>
+</head>
+<body>
+    <!-- 정적생성 -->
+    <h1>제목태그1</h1>
+    
+    
+    <script>
+        // 동적생성 : JS가 요소를 생성하는 것 
+        
+        //메서드 방식 
+        var h2 = document.createElement('h2'); //태그를 새롭게 생성하는 메서드 
+        
+        var text = document.createTextNode('제목태그2'); //텍스트컨텐츠를 새롭게 생성하는 메서드
+
+        //body의 자손으로 마지막에 추가 
+        //body : 문서객체의 body태그를 의미 
+        document.body.appendChild(h2);
+        h2.appendChild(text);
+    </script>
+</body>
+</html>

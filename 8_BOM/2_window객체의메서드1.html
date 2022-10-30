@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+    <style>
+        body{
+            height: 3000px;
+            background-color: cadetblue;
+        }
+    </style>
+    <script>
+        //window : 창객체
+        //모든 객체는 속성과 메서드를 갖고 있다! 
+        //속성문법 : 객체명.속성명
+        //메서드문법 : 객체명.메서드명()
+
+
+        //open(url, name, spaces, replace) : 기본적으로는 새창을 여는 메서드 (팝업을 띄울떄 사용 / 요즘은 HTML상에서 띄우는지 선택함)
+
+        //1. url : 새창을 띄우고 싶은 html 주소 
+        
+        //2. name : url을 어디에 띄우고 싶은지 작성
+        //  - _blank : 기본값, 새창으로 띄움
+        //  - _self : 현재창으로 띄움
+        //  - _paret : 아이프레임의 부모가 되는 페이지에 띄움
+        
+        //3. spaces : 창에 대한 특징 기술 
+        //  - width : 새창의 가로폭 지정 
+        //  - height : 새창의 높이 지정
+    
+        //4. replace : 현재 페이지의 주소내역(history)를 가져가면 true, 그렇지않으면 false
+
+        window.open('https://ezenac.co.kr/', '','width=300,height=300');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

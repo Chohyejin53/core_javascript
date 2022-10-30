@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본내장객체</title>
+    <script>
+        // 모든 객체는 속성과 메서드를 갖고 있다.
+        //메서드 : 객체에 주는 명령/동작 = 메서드명()
+        //메서드 : 변경하는 방식(touppercase) & 받아오는 방식이 있음 
+        //둘다 하는경우 : get이나 set을 붙여 표현
+
+        //게터(getOO) : 객체의 값을 얻어오는 메서드
+        //세터(setOO) : 객체의 값을 변경하는 메서드
+
+
+        var today = new Date(); 
+
+        //출력 : 2022년 10월 30일 
+
+        var y = today.getFullYear(); //밀레니엄버그예상하고 애초에 full year로 받아옴. 
+        var m = today.getMonth() + 1;  //인덱스번호로 가져와서 +1을 항상 해줄 것!
+        var d = today.getDate();
+
+        alert( y + '년'  + m + '월' + d + '일');
+
+        //출력 : 00시 00분 00초 
+
+        var h = today.getHours(); // 시간은 쌓이는 것이기때문에 "복수"를 표현
+        var m2 = today.getMinutes();
+        var s = today.getSeconds();
+
+        alert ( h + '시'  + m2 + '분' + s + '초');
+
+
+        //출력 - 오늘 요일 X요일 
+        //getDay(); : 요일을 반환하는 메서드 - 인덱스번호
+        //            일요일: 0 , 토요일 : 6
+
+        var day = today.getDay();
+        var week = ['일', '월', '화', '수', '목', '금', '토', '일'];
+    
+        alert('오늘 요일 : ' + week[day] + '요일');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

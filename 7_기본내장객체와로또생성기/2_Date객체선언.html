@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본내장객체</title>
+    <script>
+        // 1. 오늘 날짜 / 지금시간을 선언
+        var today = new Date(); //괄호안에 아무것도 넣지않음 
+
+        alert(today);
+
+
+        // 2. 특정 날짜 선언 
+        var xmas01 = new Date(2022, 12, 25);
+
+        alert(xmas01); // Wed Jan 25 2023 00:00:00 GMT+0900 (한국 표준시) 로 출력
+
+        var xmas02 = new Date(2022, 11, 25); 
+        // 월은 배열로 구분해 인덱스 번호로  처리 
+        // > 인덱스로 0번 : 1월 , 1월 : 2번 ... 12월 : 11번 
+        
+        alert(xmas02);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

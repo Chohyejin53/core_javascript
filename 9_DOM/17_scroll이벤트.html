@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+    <style>
+        body {
+            height: 3000px; /* 스크롤바 생성 */
+        }
+        button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button>500px아래로 ▼ </button>
+    <script>
+        //scroll : 창의 스크롤바를 움직였을 때
+        window.addEventListener('scroll', function(){
+            document.body.style.backgroundColor = 'beige';
+        });
+        
+        var btn = document.querySelector('button');
+
+        btn.addEventListener('click', function(){
+            //scrollTo() : 스크롤바의 위치를 변경 
+            window.scrollTo({
+                top:500,
+                left: 0,
+                behavior: 'smooth' //자연스럽게 내려가게 처리
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

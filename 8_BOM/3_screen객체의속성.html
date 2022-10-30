@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+    <script>
+        //screen : 운영객체의 화면객체
+        //메서드는 없고 속성만 존재 
+
+        //새창을 300x300짜리를 띄운 후 5초 뒤에 풀스크린으로 처리 
+
+        var win = window.open('','','width=300,height=300');
+
+        win.moveTo(0,0);
+
+        setTimeout(function(){
+            var w = screen.width; //사용자 화면의 해상도 가로폭 담는 변수 
+            var h = screen.height; //사용자 화면의 해상도 높이 담는 변수 
+            
+            win.resizeTo(w,h);
+            
+        },5000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)</title>
+    <style>
+        span {
+            display: none; /*숫자를 안보이게 처리*/
+        }
+    </style>
+</head>
+<body>
+    <h1>테스트 <span>01</span></h1>
+    <h1>테스트 <span>02</span></h1>
+    <h1>테스트 <span>03</span></h1>
+    
+    <h2></h2>
+    
+    <script>
+        var h1 = document.getElementsByTagName('h1');
+        var h1 = document.getElementsByTagName('h2');
+
+        alert (h1[0].innerHTML); // 태그인식 = 태그도 가져옴 
+                                // 테스트 <span>01</span> 반환
+        alert (h1[1].innerText); // 태그미인식 + display:none;처리된것은 가져오지않음 
+                                // 테스트 반환
+        alert (h1[2].textContent); // 태그미인식 + display:none;처리된것은 가져옴 
+                                //테스트 03 반환
+
+        var a = '<a href="#">링크태그</a>';
+
+        //문서객체에 텍스트를 추가 
+        h2[0].innerHTML = a;
+        h2[1].innerText = a;
+        h2[2].textContent = a;
+
+    </script>
+</body>
+</html>  

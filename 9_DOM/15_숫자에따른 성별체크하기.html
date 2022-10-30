@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <input type="text" placeholder="생년월일입력"  maxlength="6">
+    <input type="text" id="first" maxlength="1" style="width: 15px;">XXXXXX
+    <hr>
+    <input type="radio" id="male" name="gender">
+    <label for="male">남자</label>
+    &nbsp;&nbsp;&nbsp;
+    <input type="radio" id="female" name="gender">
+    <label for="female">여자</label>
+    <script>
+        //문서객체담기 
+        var first = document.getElementById('first');
+        var male = document.getElementById('male');
+        var female = document.getElementById('female');
+        
+        first.onkeyup = function(){
+            var num = this.value;
+
+            if(num == 1 || num ==3 ) {
+                male.checked = true;
+            } else if ( num == 2 || num ==4 ) {
+                female.checked = true;
+                
+            } else if (num == '') {
+                
+            } else {
+                male.checked = false;
+                female.checked = false;
+                alert ('1~4 사이의 정수로 입력하세요');
+            }
+        }
+    
+    </script>
+</body>
+</html>

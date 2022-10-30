@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <label for="coupon">쿠폰번호입력</label> <br>
+    <input type="text" id="coupon" placeholder="8자입력" maxlength="8">
+
+    <script>
+        //coupon에서 글자를 입력했을 때, 대문자로 변경하시오. 
+
+       /*  
+       var couponNum = document.getElementById('coupon');
+
+        couponNum.addEventListener('keyup', function(){
+            var v = this.value;
+            v.toUpperCase;
+        }); 
+        */
+
+        // 풀이 
+        var coupon = document.getElementById('coupon');
+
+        coupon.addEventListener('keyup', function(){
+            // 대입연산자 = 좌변의값에 우변의 값을 대입하는 것 
+            var v = this.value;
+            this.value = v.toUpperCase(); // 대문자로 변경
+            //(string객체의 메서드)
+        }); 
+
+
+
+        //keyup : 키보드를 눌렀다 뗐을 때 
+        //keydown : 키보드를 누르고 있을 때 (특수 키 인식)
+        //keypress : 키보드를 누르고 있을 때 (특수 키 미인식 )
+    </script>
+</body>
+</html>

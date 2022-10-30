@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <label for="dollarBox">미국 USD</label> <br>
+    <input type="text" id="dollarBox" value="1">
+    <hr>
+    <label for="wonBox">대한민국 KRW</label> <br>
+    <input type="text" id="wonBox" >
+
+    <script>
+        //키보드 이벤트 
+        //keyup : 키보드를 눌렀다 뗐을 때 
+        //value : 폼관련 태그의 value값 속성
+
+
+        //문서객체선택
+        var dollarBox = document.getElementById('dollarBox');
+        var wonBox = document.getElementById('wonBox');
+
+        var dollar = 1425;
+        wonBox.value = dollar;
+
+
+        //dollarBox에서 키보드를 눌렀다 뗐을 때 wonBox에 달러 * 사용자 수치로 wonBox에 결과를 표시하시오.
+        //단, 0보다 크게 적었을 때 처리, 그렇지않은 경우 전부 0으로 다시 표시
+
+        dollarBox.addEventListener('keyup', function(){
+            //dollarBox의 value값을 담는 변수 
+            var v = this.value;
+
+            if(v >= 0) {
+                wonBox.value = dollar * v;
+
+            } else {
+                this.value = 0;
+                wonBox.value = 0;
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <h1> 가로폭 : <span id="text01"></span></h1>
+    <h1> 세로높이 : <span id="text02"></span></h1>
+    
+    <script>
+
+        //resize : 창의 사이즈가 변경되었을 떄 
+        
+        
+        //문서객체 선택 
+        var text01 = document.getElementById('text01');
+        var text02 = document.getElementById('text02');
+
+        function reSize(){
+            text01.textContent = this.innerWidth;
+            text02.textContent = this.innerHeight;
+        }
+
+        // window.addEventListener('resize', function(){
+        //     text01.textContent = this.innerWidth;
+        //     text02.textContent = this.innerHeight;
+        // });
+
+        
+        //초기실행 호출 
+        reSize();
+
+        window.addEventListener('resize', reSize);
+
+        
+    </script>
+</body>
+</html>

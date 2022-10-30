@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+    <script>
+        //location : 주소표시줄 객체
+        //모든 객체는 속성과 메서드를 갖고 있음 
+        //속성문법 : 객체명.속성명
+        //          객체명.속성명 = 값;  //속성값이 변경됨 
+        //메서드 문법 : 객체명.메서드명();
+
+        //reload() : 주소를 새로고침하는 메서드 
+        //1초마다 [n초가 지났습니다]라는 문구를 출력하고 10초뒤 새로고침하시오.
+
+        
+        var num = 1;
+        setInterval(function(){
+            document.write(num + '초가 지났습니다. <br>');
+
+            num++ // 1씩증가 
+        },1000);
+
+        setTimeout(function(){
+            location.reload(); //새로고침 처리
+        },10001);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

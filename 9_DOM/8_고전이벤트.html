@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <h1>제목태그</h1>
+
+    <script>
+        //이벤트 : 명령을 발생시키는 시점 
+
+
+        //고전이벤트(es1~ 지금까지 사용되는 이벤트) : 객체명.on이벤트타입 = 콜백함수;
+
+
+        //h1태그를 클릭하면 글자색을 빨간색으로 변경 
+        var h1 = document.querySelector('h1');
+
+        h1.onclick = function(){
+            //this : 객체가 자신의 코드블럭{} 내부에서 자신을 호출할 떄 사용
+            this.style.color = 'red';
+        }
+    </script>
+</body>
+</html>

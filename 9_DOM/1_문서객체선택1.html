@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)</title>
+    
+</head>
+<body>
+    <!-- 정적생성 : html에서 직접적으로 마크업하는 것 -->
+    <h1 id="title01">제목태그</h1>
+    <h1 id="title02">제목태그</h1>
+
+
+    <!-- 문서객체를 먼저 읽어야 스크립트가 문서객체를 인식해서 해당 태그 아래에 작성 -->
+    <script>
+        //동적생성 : JS에서 문서객체를 생성하는 것 
+
+        //document : 문서객체 
+        //모든 객체는 속성과 메서드를 갖고 있음 
+
+        //문서객체선택1: id명으로 문서객체를 선택 
+
+        var title01 = document.getElementById('title01'); //#쓰지않음, 이미 아이디가선택된상태
+
+        //style : 문서객체의 css속성을 컨트롤하는 속성 
+        title01.style.color  ='red';
+
+        
+    </script>
+</body>
+</html>

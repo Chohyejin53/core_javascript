@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)</title>
+    
+</head>
+<body>
+    
+    
+    <script>
+        //이미지객체를 생성 
+        var img = document.createElement('img');
+
+        document.body.appendChild(img);
+
+        //태그속성컨트롤메서드 
+        //1.게터 : getAttribute('속성명'); //깂을 얻어올때
+        //2.세터 : setAttribute('속성명', 값); //값을 변경할때 
+
+        img.setAttribute('src','test.jpg');
+        img.setAttribute('width','300');
+
+        alert(img.getAttribute('width'));
+    </script>
+</body>
+</html>  

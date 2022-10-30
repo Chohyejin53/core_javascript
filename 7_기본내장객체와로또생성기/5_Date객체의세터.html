@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본내장객체</title>
+    <script>
+        // 모든 객체는 속성과 메서드를 갖고 있다.
+        //메서드 : 객체에 주는 명령/동작 = 메서드명()
+        //메서드 : 변경하는 방식(touppercase) & 받아오는 방식이 있음 
+        //둘다 하는경우 : get이나 set을 붙여 표현
+
+        //게터(getOO) : 객체의 값을 얻어오는 메서드
+        //세터(setOO) : 객체의 값을 변경하는 메서드
+
+
+        var today = new Date(); 
+
+        //100일 뒤 반환 
+        //우리가 말하는 TODAY는 오늘도 포함되기때문에 100이 아닌 -1을 해준 99를 넣어주어야함
+        today.setDate(today.getDate() + 99);
+
+        alert(today.toLocaleDateString());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

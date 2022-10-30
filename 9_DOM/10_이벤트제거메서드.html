@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)-이벤트</title>
+</head>
+<body>
+    <h1>제목태그</h1>
+
+    <script>
+        //이벤트 : 명령을 발생시키는 시점 
+
+
+        //removeEventListner('이벤트타입','콜백함수')
+        // : PC에서 모바일로 전환되는 떄에 gnb메뉴에 클릭이벤트 추가/제거기능구현시 사용
+
+
+        //h1태그를 클릭하면 경고창 띄우기, 5초뒤에는 경고창 안뜨게 처리
+        var h1 = document.querySelector('h1');
+
+        function popup(){
+            alert('클릭되었습니다.');
+        }
+
+        h1.addEventListener('click',popup);
+        
+        setTimeout(function(){
+            h1.removeEventListener('click', popup);
+        },5000);
+    </script>
+</body>
+</html>

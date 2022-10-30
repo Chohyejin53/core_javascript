@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본내장객체</title>
+    <script>
+        // 로또 : 6개의 번호를 맞춰야 당첨 - 1~45 사이의 숫자가 랜덤하게 반환 
+        //                                - 같은 숫자는 나오지 않음
+
+        // 숫자 6개를 담는 변수를 선언 
+        var lotto = []; // 값을 비워 놓은 상태 
+        
+        // 반복문 - 숫자를 6번 추가 
+        for(var i = 0; i<6; i++){
+            // 1~45사이의 정수를 랜덤하게 반환 
+            // random(); : 0~1사이의 실수를 반환 
+            // 0부터 시작하기떄문에 44를 곱해줌 
+            // floor(); : 정수로 내림
+            var num = Math.floor(Math.random() * 44) +1;
+
+            // 같은 숫자가 나오면 새로운 값으로 변경 
+            for(var j in lotto) {
+                while(num == lotto[j]){ //현재 nim값이 기존 lotto값과 같다면
+
+                    //새로운 랜덤한 숫자를 담는 명령 실행
+                    var num = Math.floor(Math.random() * 44) +1;
+                }
+            }
+
+            lotto.push(num);
+        }
+
+
+        //lotto 숫자를 오름차순으로 정렬 
+        lotto.sort(function(left, right){
+            return left - right;
+        });
+
+        alert('이번주 로또 번호 : ' + lotto);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

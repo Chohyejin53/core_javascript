@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(document object model)</title>
+    <script>
+        //준비구문 : 창을 먼저 읽고(문서객체 다 읽고) 스크립트 구문을 실행 
+        //제이쿼리와는 다르게 자바스크립트에서는 준비구문을 한번만 작성해야함
+        //onload : 모든 문서객체를 읽고 구현이 완료된 후 (이미지 영상까지 다) 스크립트가 실행됨 ===>>> 속도가 느리다는 단점이 있음 
+        window.onload = function(){
+            var title = document.querySelector('.title'); //클래스선택한다고 명시되지않 기때문에 "."쓰기!!
+
+            title.style.color = 'red';
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 나열해서 태그작성 -->
+    <h1 class="title">제목태그</h1> <!-- 0 -->
+    <h1 class="title">제목태그</h1> <!-- 1 -->
+    <h1 class="title">제목태그</h1> <!-- 2 -->
+
+</body>
+</html>

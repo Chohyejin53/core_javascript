@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        //let : 변수를 선언하는 키워드 
+
+        //1. 재선언 시 에러 (중복 허용하지않음) 
+        let cup ='물';
+        // let cup ='콜라';  // 중복 에러발생 :aught SyntaxError: Identifier 'cup' has already been declared 
+
+
+        //2. 지역변수와 전역변수의 기준은 { } 코드블록
+        let a = 10; //전역변수
+        
+        console.log(a); //호출 잘됨
+
+        if(a == 10) {
+            var b = 20; //전역변수
+            let c = 30; //지역변수 
+
+            console.log(b); //호출 잘됨
+            console.log(c); //호출 잘됨
+        }
+        console.log(b);   //호출 잘됨
+        console.log(c);  //에러발생
+
+
+    </script>
+</body>
+</html>

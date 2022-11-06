@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        // 1. var를 통한 for문 처리 
+        var i = 10; //전역변수
+
+        for(var i=0;i<5;i++) {  //전역변수 재선언 (i = 10; 값이 사라짐)
+            console.log(i);  //0~4가 반환됨
+        }
+
+        console.log(i);  // 10이 나와야하는데 5가 반환됨 (for문에서 i가 5가 되었을 때 for문을 나와 console.log에 찍히는 것이기 때문에 5가 반환됨)
+
+        console.log('===========');
+
+        
+        // 2. let을 통한 for문 처리 
+        let j = 10; //전역변수
+
+        for(let j=0;j<5;j++) {  //지역변수
+            console.log(j);  //지역변수값을 호출  // 0~4까지  반환됨
+        }
+
+        console.log(j); //전역변수값을 호출 (for문 위에서 선언된 전역변수 j=10;의 값을 반환됨)
+    </script>
+</body>
+</html>

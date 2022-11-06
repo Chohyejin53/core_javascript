@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        //this : 객체를 참조할 때 사용하는 키워드 
+
+
+        //1. 혼자써있다면 전역객체를 의미 : Window
+        //초기실행 - 전역 
+        let x = this;
+        console.log(x); //Window 반환
+
+
+        //2. 함수에서 this - 전역객체를 의미 : Window
+        function test01 (){ 
+            return this;
+        }
+        console.log(test01()); //Window 반환
+
+
+        //3. 객체의 메서드에서의 this - 소유하고 있는 해당 객체
+        let person = {
+            userName : '홍길동',
+            walk : function(){
+                alert(this.userName + '은 일어나주세요.');
+            }
+        }
+
+        person.walk();
+
+
+        //4. 이벤트 코드블록 내부에서의 this : 이벤트를 받고 있는 객체 
+        
+    </script>
+</body>
+</html>

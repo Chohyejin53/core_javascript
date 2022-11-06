@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+    <button id="btn">클릭</button>
+    <P id="text"></P>
+
+
+    <script>
+        var btn = document.getElementById('btn');
+        var text = document.getElementById('text');
+        
+        //함수선언 this 담기 
+        var test = function(){
+            text.innerHTML = this;
+        }
+
+        //초기실행 - 전역호출 - 소유자가 window
+        window.addEventListener('load',test);
+
+        //버튼 클릭 - 소유자가 이벤트를 갖고 있는 문서 객체
+        
+        btn.addEventListener('click',test);
+    </script>
+</body>
+</html>

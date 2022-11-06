@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        //화살표 함수 : function 키워드 생략하고 [=>]를 사용한 함수 
+        //화살표 함수는 표현식의 개수, 매개변수의 유무에 따라 문법이 조금씩 다름
+
+        //1. 표현식(명령문)이 한개인 경우 - { } 코드블록을 생략 
+        
+        test01 = () => alert('테스트01'); 
+        test01(); //호출 
+
+        //2. 표현식이 여러 개인 경우 - {} 코드블록을 꼭!!! 작성
+        test02 = () => { //함수 선언
+            let a = 10;
+            let b = 10;
+            alert(a + b);
+        }
+
+        test02();
+
+        //3. 매개변수가 한개인 경우 - ()를 생락해도 됨 
+        test03 = x => { 
+            return x * x; //return을 경우 다시 돌아가서 코드블록을 넣어주어야함
+        }
+
+        alert(test03(5));
+
+        //4. 매개변수가 여러개인 경우 - ()를 반드시 작성
+
+        test04 = (x, y) => {
+            return x + y;
+        }
+
+        alert(test04(10,5));
+    </script>
+</body>
+</html>

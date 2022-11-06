@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        //const : 변수를 선언하는 키워드 
+
+        //1. 재선언/제힐당도 안됨 
+        
+        let a = 10;
+        a = 20;
+        
+        const b = 10;
+        //b = 30;  //에러 발생
+        
+        const date = new Date();
+        console.log(date); //오늘 날짜는 변하지만, 코드상으로 변하지않음
+
+
+
+        //2. 전역변수/지역변수 - 코드블록 기준 
+
+        //3. 객체/배열은 값은 변경 가능
+        const c = {
+            test01 : 10,
+            test02 : 'hello'
+        } 
+
+        c.test02 = '안녕하세요';  // 값은 바뀌었다고 생각할 수 있지만 코드가 변경된 것은 아니기떄문에 에러 반환하지않음
+
+        console.log(c); //변경된 데이터값 호출 잘됨
+
+    </script>
+</body>
+</html>

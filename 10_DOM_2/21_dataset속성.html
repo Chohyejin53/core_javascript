@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS - DOM</title>
+        <style>
+           
+        </style>
+    </head>
+        <body>
+            <!-- HTML 태그속성 : <태그명 속성명="값"> -->
+            <!-- 기본적으로는 속셩명은 지정된 것만 사용 -->
+            <!-- 사용자 정의 속성 : data-영문 -->
+            <h1 data-index="0" data-tag-name="h01">제목태그</h1>
+            <h1 data-index="1" data-tag-name="h02">제목태그</h1>
+            <h1 data-index="2" data-tag-name="h03">제목태그</h1>
+
+            <script>
+                //사용자정의속성 : getAttribute()로도 값을 가져올 수는 있음 
+                //dataset : 문서객체의 사용자 정의 속성값이 접근
+                
+
+                //문서객체선택.dataset.속성명;
+                //문서객체선택.dataset[속성명];
+
+                var h1 = document.querySelectorAll('h1');
+
+                for(var i=0; i<h1.length;i++) {
+                    h1[i].addEventListener('click',function(){
+                        var dataIndex = this.dataset.index; //data-는 안붙여도됨
+                        var tagName = this.dataset.tagName;  //태그에는 -로 쓰고 가져올때는 카멜표기법으로 작성해줄것!!!!!
+                        alert(dataIndex);
+                        alert(tagName);
+
+
+                    });
+                }
+
+            </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    
+    <script>
+    //이벤트객체 : DOM과 관련된 이벤트가 발생되면, 발생될 떄 생기는 정보를 저장하는 객체 
+    //ex1) 마우스를 움직일 때 위치값을 담는 것 
+    //ex2) 키보드를 눌렀을 때 눌린 키 정보를 담는 것 
+
+
+    //1.문서객체선택
+    var btn = document.getElementById('btn');
+    
+
+    //2-1. 고전이벤트 - 이벤트객체 추가
+    btn.onclick = function(e) { // 콜백함수의 첫번째 매개변수명이 이벤트객체 
+                                // 매개변수는 어떤 것이든 상관없지만 event의 약자로 e사용
+        alert(e.type); //어떠한 이벤트가 발생되었는지 경고창에 띄워줌 
+    }
+
+    //2-2 이벤트메서드 - 이벤트객체 추가
+btn.addEventListener('mouseenter',function(e){ //콜백함수의 첫번째 매개변수명이 이벤트 객체
+    alert(e.type);
+})
+    </script>
+</body>
+</html>

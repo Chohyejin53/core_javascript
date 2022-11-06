@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+</head>
+<body>
+    <!-- 정적생성 : html에 마크업하는 것 -->
+    <h1 id="title"> 제목태그</h1>
+    <h1 class="text"> 제목태그</h1>
+    <h1 class="text"> 제목태그</h1>
+    <h1> 제목태그</h1>
+    <h1> 제목태그</h1>
+
+    <script>
+        //1. 아이디 선택방식 
+        var title = document.getElementById('title');
+        title.style.color = 'red'
+
+        //2. 태그선택방식
+        var h1 = document.getElementsByTagName('h1'); //복수선택 - 배열로 선택해야함
+
+        for(var i=0;i<h1.length;i++) {
+            h1[i].style.textDecoration = 'underline';
+        }
+
+        //3. 클래스명 선택방식 - 복수로 선택 -배열로 선택
+        var text = document.getElementsByClassName('text');
+
+        for(var i=0;i<text.length;i++) {
+            text[i].style.color = 'blue';
+        }
+
+        //4.css선택자로 선택 - 첫번째 것 한개만 선택 
+        var first = document.querySelector('.text');
+        first.style.fontStyle = 'italic';
+
+
+        //5. css선택자로 선택 - 모든것을 선택 - 복수로 선택 
+        var all = document.querySelectorAll('.text');
+
+        all[0].style.fontSize = '20px';
+        all[1].style.fontSize = '60px';
+    </script>
+</body>
+</html>

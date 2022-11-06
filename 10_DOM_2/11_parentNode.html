@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+        h1, p {
+            display: inline-block;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 2px solid purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="box01">
+        <h1>제목태그</h1>
+    </div>
+    <div id="box02">
+        <p>제목태그</p>
+    </div>
+    
+    <script>
+    // 부모 노드를 처리할 것이기 때문에 2개만 문서객체를 선택
+    var h1 =document.querySelector('#box01 > h1');
+    var p =document.querySelector('#box02 > p');
+
+    h1.addEventListener('click',function(){
+        this.parentNode.style.backgroundColor = 'pink';
+    });
+
+    p.addEventListener('click',function(){
+        this.parentNode.style.backgroundColor = 'lightblue';
+    });
+
+    </script>
+</body>
+</html>

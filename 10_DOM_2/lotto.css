@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/* base */
+*{ padding: 0; margin: 0; }
+
+
+/* lottoBox */
+.lottoBox{
+	width: 1000px; border: 1px solid #ccc;
+	padding: 50px; box-sizing: border-box; margin: 50px auto;
+}
+.lottoBox:after{
+	content: ''; clear: both; display: block;
+}
+.lottoBox h2{
+	margin-bottom: 10px;
+	text-align: center; font-weight: normal;
+}
+.lottoBox .num{
+	font-weight: bold; color: #ff0000;
+}
+.lottoBox p{
+	margin-bottom: 30px;
+	text-align: center; color: #666; font-size: 14px;
+}
+.lottoBox .winningNumber{
+	position: relative;
+	display: flex; justify-content: space-between;
+	float: left; width: 520px; height: 120px; margin-bottom: 50px;
+	padding: 30px; box-sizing: border-box; border-radius: 30px;
+	background-color: #fafafa; 
+}
+.lottoBox b{
+	position: absolute; bottom: -30px; left: 50%; 
+	transform: translateX(-50%);
+	color: #666;
+}
+.lottoBox .plus{
+	float: left; width: 258px; height: 120px;
+	text-align: center; line-height: 90px; 
+	font-weight: bold; font-size: 100px; color: #666;
+}
+.lottoBox .bonusNumber{
+	position: relative;
+	float: right; width: 120px; height: 120px; margin-bottom: 50px;
+	padding: 30px; box-sizing: border-box; border-radius: 30px;
+	background-color: #fafafa; 
+}
+.lottoBox .winningNumber span, .lottoBox .bonusNumber span{
+	display: block; width: 60px; height: 60px; 
+	border-radius: 50%;
+	background-color: #69c8f2;
+	color: #fff; text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+	font-size: 28px; text-align: center; line-height: 57px;
+}

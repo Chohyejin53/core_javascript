@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>햄버거버튼</title>
+        <style>
+            /* base */
+            *{ padding: 0; margin: 0; }
+            li{ list-style: none; }
+            a{ text-decoration: none; }
+            button{ cursor: pointer; } /* 마우스 손모양 */
+
+            /* panel_btn */
+            .panel_btn{
+                width: 35px; height: 30px; /* 삼선 공간 */
+                margin: 50px; /* 이건 작성하지 않아도 됨 */
+                padding: 5px; /* X자로 변경시 넘어가는 공간 처리 */
+                overflow: hidden; /* 최근 브라우저는 괜찮은데, 과거버전들을 transform으로 회전시에 요소 반경이 커지게 됨 -> 그것을 방지하기 위해 작성 */
+            }
+            .panel_btn a{
+                display: block; /* 부모영역 상속 */
+                width: 100%; height: 100%; /* 부모공간 전부 상속 */
+
+                position: relative; /* 자손인 span선들의 앱솔루트 기준을 현재 요소로 변경 */
+            }
+
+            /* line */
+            .panel_btn span{
+                position: absolute; /* 인라인요소가 블록으로 변경 */
+                left: 0;
+                width: 35px; height: 2px;
+                background-color: #333; /* 배경색으로 선처리 */
+
+                transition: 0.3s; /* CSS변화에 시간차를 주는 속성 */
+            }
+            .panel_btn .line01{ top: 2px; transform-origin: left top; }
+            .panel_btn .line02{ top: 14px; }
+            .panel_btn .line03{ top: 26px; transform-origin: left bottom; }
+
+            /* 클릭이벤트로 활성화될때 주는 클래스 : active */
+            .panel_btn a.active .line02{ transform: scaleX(0); }
+            .panel_btn a.active .line01{ transform: rotate(45deg); left: 5px; }
+            .panel_btn a.active .line03{ transform: rotate(-45deg); left: 5px; }
+        </style>
+    </head>
+    <body>
+        <div class="panel_btn">
+            <!-- 클릭받는 대상은 : a태그, button태그 등 초점받기 -->
+            <!-- 웹접근성 : 지체장애인분들이 마우스를 잡지 못함 - 키보드접근 -->
+            <a href="#" title="패널 열기" class="active"><!-- 이미지나 아이콘인 경우 링크에 대한 설명 작성 -->
+                <!-- 선이 각각 움직여서 따로 작업 -->
+                <span class="line01"></span>
+                <span class="line02"></span>
+                <span class="line03"></span>
+            </a>
+        </div>
+        <script>
+            //문서객체선택 - a 
+            var btn  = document.querySelector('.panel_btn > a');
+
+            //클릭이벤트
+            btn.addEventListener('click', function(e){
+                //# : 임시링크 - 클릭시 홈페이지 상담으로 올라가는 기본 이벤트가 있음 
+                //a태그가 버튼의 역할을 한다면 preventdefault 이벤트줘야함!
+
+                e.preventDefault(); //기본이벤트 제거
+
+                this.classList.toggle('active');
+            });
+        </script>
+    </body>
+</html>

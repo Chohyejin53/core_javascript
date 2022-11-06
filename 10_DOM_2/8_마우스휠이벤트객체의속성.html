@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+    <style>
+        body {
+            height: 3000px; /* 세로스크롤바생성 */
+        }
+
+        #text {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="text"></h1>
+    <script>
+    // wheel : 마우스 휠을 움직였을 때 
+    // 과거 : mousewheel 로 명칭이 달랐음
+
+
+    //속성
+    //1. deltaX : 가로스크롤 바를 마우스휠로 이동, 오른쪽으로 이동하면 양수반환, 왼쪽으로 이동하면 음수반환
+
+    //2.  deltaY : 세로스크롤 바를 마우스휠로 이동, 아래쪽으로 이동하면 양수반환, 위쪽으로 이동하면 음수반환
+
+    //3.deltaMode : 델타값(픽셀, 라인또는 페이지)의 측정단위를 나타내는 숫자를 반환
+
+
+    var text = document.getElementById('text');
+
+    document.onwheel = function(e){
+        //e : event 객체
+        var top = e.deltaY;
+
+        text.textContent = top;
+
+
+        if (top > 0) { //양수라면(스크롤을 아래로 내린다면)
+            document.body.style.backgroundColor = 'pink';
+        } else { //음수라면(스크롤을 위로 내린다면)
+            document.body.style.backgroundColor = 'lightblue';
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2>제목태그2</h2>
+    <h2>제목태그2</h2> <!-- 이전동위선택자 -->
+    <h1>제목태그1</h1> 
+    <h2>제목태그2</h2> <!-- 다음동위선택자 -->
+    <h2>제목태그2</h2>
+    
+    
+    <script>
+        //sibling
+        //.previousElementSibling / .nextElementSibling : 공백을 포함하지않음
+        //.previousSibling / .nextSibling : 공백을 포함
+
+        
+        var h1 = document.querySelector('h1');
+
+        h1.previousElementSibling.style.color   = 'red';
+        h1.nextElementSibling.style.color   = 'blue';
+    </script>
+</body>
+</html>

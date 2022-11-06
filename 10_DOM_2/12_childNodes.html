@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+        h1, p {
+            
+            background-color: #fff;
+            border: 2px solid lavender;
+        }
+    </style>
+</head>
+<body>
+    <div id="box01">
+        <h1>제목태그</h1>
+        <p>문단태그</p>
+    </div>
+    
+    <script>
+        //부모요소만 선택 
+        var box01 = document.getElementById('box01');
+
+        //자손 노드 개수 확인
+        var num01 = box01.childNodes.length;  //공백까지도 자손으로 받음
+        var num02 = box01.childElementCount; //공백제외
+
+
+        console.log(num01);  //5 반환 : 공백에도 node개수가 포함됨 
+                            // for in 문은 공백 node 포함 / for문은 포함 X
+
+        // box01.childNodes[0].style.color = 'red';  //공백이라 css가 들어갈 수 없다고 에러 반환
+
+        console.log(num02); // 2 반환 : 공백을 제외한 node개수 반환함
+        
+
+    </script>
+</body>
+</html>

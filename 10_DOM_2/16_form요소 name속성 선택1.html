@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- 폼관련 요소는 name속성을 통해서 데이터관리 -->
+    <form action="#" name="myForm">
+        <input type="text" name="myInput" id="">
+    </form>
+    
+    <script>
+        //## name속성 선택방식 
+        //1. document.폼네임.요소네임; (가장많이쓰임)
+        document.myForm.myInput.style.borderColor = 'red';
+
+        //2. document.forms['폼네임'].elements['요소네임']; 
+        var box = document.forms['myForm'].elements['myInput'];
+        box.style.height = '100px'; 
+
+        //3. document.forms['폼네임']['요소네임'];
+        document.forms['myForm']['myInput'].style.backgroundColor = 'salmon';
+    </script>
+</body>
+</html>

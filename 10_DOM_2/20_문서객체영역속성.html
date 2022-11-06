@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS - DOM</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            h1 {
+                width: 200px;
+                height: 200px;
+                margin: 50px;
+                padding: 30px;
+                border: 5px solid #000;
+                background-color: pink;
+
+                white-space: nowrap; /* 글자들이 부모보다 클 때 처리 안함 */
+                overflow: hidden; /* 현재 요소를 넘어간 자손을 안보이게 처리 */
+
+            }
+        </style>
+    </head>
+        <body>
+            <h1 id="test">제목태그제목태그제목태그</h1>
+            <hr>
+            <p>ClientWidth : <span class="text01"></span></p>
+            <p>offsetWidth : <span class="text02"></span></p>
+            <p>scrollWidth : <span class="text03"></span></p>
+
+            <script>
+            //문서객체 선택 
+            var test = document.querySelector('#test');
+            var text01 = document.querySelector('.text01');
+            var text02 = document.querySelector('.text02');
+            var text03 = document.querySelector('.text03');
+            
+            // ClientWidth : 폭 + 패딩 
+            text01.textContent = test.clientWidth;
+
+            // offsetWidth : 폭 + 패딩 + border + 스크롤바
+            text02.textContent = test.offsetWidth;
+            
+            // scrollWidth : offsetWidth + overflow로 가려진 부분까지
+            text03.textContent = test.scrollWidth;
+            
+            </script>
+    </body>
+</html>

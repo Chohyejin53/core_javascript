@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+    <style>
+        .active {
+            background-color: #000;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>제목태그</h1>
+    <p class="text">문단태그</p>
+    <script>
+       //className : 문서객체의 class속성을 설정하거나 값을 반환 (괄호열고닫지않음-속성이기때문)
+        
+       var h1 = document.querySelector('h1');
+       var p = document.querySelector('p');
+    
+
+       h1.className = 'active';
+
+       console.log(p.className); // text 반환 (p의 클래스 반환)
+
+
+       //단점 
+       //: 기존 클래스명 제거하고 변경됨 
+
+       //보완
+       //: classList 사용
+    </script>
+</body>
+</html>

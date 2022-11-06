@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <input type="text" id="textBox">
+    <p>키코드 : <span id="result01"></span></p>
+    <p> shiftKey : <span id="result02"></span></p>
+
+    <script>
+    // 웹접근성을 위해 잘 알아야하는부분!
+    // 키보드 이벤트객체 : 키보드를 눌렀을 때, 발생되는 정보를 담는 이벤트객체 
+
+    //1. keuCode : 눌린 키의 유니코드(숫자)를 반환 - !!!!!!탭키 번호는 9번!!!!!!!!!!!
+    //2. shiftKey : shift키가 눌렸다면 true / 그렇지않으면 false를 반환
+    
+
+    //1. 문서객체선택 
+    var textBox = document.getElementById('textBox');
+    var result01 = document.getElementById('result01');
+    var result02 = document.getElementById('result02');
+
+    //2.이벤트 : keydown - 특수키 인식 (keypress는 특수키를 인식하지 못해 keydown써줘야함!)
+    textBox.onkeydown = function(e){
+        //e : 이벤트객체 
+        
+        var code = e.keyCode;
+        var shift = e.shiftKey;
+
+        result01.textContent = code;
+        result02.textContent = shift;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+</head>
+<body>
+    <!-- 정적생성 : html에 마크업하는 것 -->
+    <h1 id="title"> 제목태그</h1>
+    <h1 class="text"> 제목태그</h1>
+    <h1 class="text"> 제목태그</h1>
+    <h1> 제목태그</h1>
+
+    <!-- 3. 인라인이벤트 : 태그의 이벤트속성으로 JS명령처리 -->
+    <h1 onclick="this.style.color='green'"> 제목태그</h1>
+
+    <script>
+        //1. 이벤트 속성(고전이벤트) : 객체선택.on이벤트타입 = 콜백함수; -- 괄호 열고닫고하지않음 
+        var title = document.getElementById('title');
+
+        title.onclick = function(){
+            this.style.color = 'red'; //this : 객체가 자기자신의 코드블록{} 내부에서 자신을 호출할 때 사용하는 키워드 
+        } 
+
+        //2. 이벤트메서드 : 객체선택.addEventListener('이벤트타입','콜백함수');
+        var text = document.querySelector('.text');
+
+        text.addEventListener('click',function(){
+            this.style.color = 'blue';
+        });
+    </script>
+</body>
+</html>

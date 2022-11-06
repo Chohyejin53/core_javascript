@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - DOM</title>
+
+</head>
+<body>
+    <a href="http://naver.com" id="direct">네이버 바로가기!</a>
+
+    <script>
+    // a태그를 클릭하면 확인/취소 창이떠서, 확인버튼을 누르면 네이버페이지로 이동, 취소버튼을 누르면 해당페이지에 잔류
+
+    //기본이벤트 : 태그요소가 기본적으로 갖고 있는 이벤트 
+    //1. a : 페이지가 이동되는 이벤트를 갖고 있음 
+    //2. form : 데이터를 전송시키는 이벤트를 갖고 있음
+
+    var direct = document.getElementById('direct');
+
+    direct.addEventListener('click',function(e){
+        // e : 이벤트객체
+
+        e.preventDefault(); //기본이벤트 제거메서드 
+
+
+        //href값을 담는 변수 
+        var url = this.getAttribute('href');
+
+        var q =confirm('네이버로 이동하시겠습니까?');
+
+        if(q) { //확인버튼을 눌렀다면
+            window.open(url);
+
+            //현재창에서 변화 : location.assign(url);
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+
+    <script>
+       //더하기 연산 함수선언 
+       function test01 (x,y) {
+        return x+y;
+       }
+
+    alert(test01()); //매개변수 생략 - 값이 없을 뿐 결과는 실행 //NaN 반환
+
+    //더하기 연산함수 선언 - 기본값 퍼리 
+    function test02 (x=0,y=0) {
+        return x+y;
+       }
+
+       alert(test02()); //0 반환
+       alert(test02(10,5)); //15 반환
+       alert(test02(10)); //10 반환
+    </script>
+</body>
+</html>

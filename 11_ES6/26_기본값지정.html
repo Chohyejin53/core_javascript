@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+
+    <script>
+
+        //비구조화할당
+        /* 
+            변수키워드 {변수명1, 변수명2, ...} = {
+                속성명 : 값,
+                속성명: 값,
+                ...
+            }
+        */
+
+        //ES6이전의 코드 
+
+        const {cat, dog, tiger, monkey = 'MONKEY'} = {
+            cat : 'CAT',
+            dog : 'DOG',
+            tiger : 'TIGER'
+        }
+
+        //출력
+        console.log(cat);
+        console.log(monkey);
+        
+    </script>
+</body>
+</html>

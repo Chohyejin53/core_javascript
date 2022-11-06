@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - ES6</title>
+</head>
+<body>
+
+    <script>
+
+        //비구조화할당
+
+        const animalList = ['CAT', 'DOG', 'TIGER'];
+        const [cat, ...restAnimal] = animalList;  //cat 만 CAT이 담기고 나머지 동물들은 restAnimal에 담김 
+
+        alert(cat); //'CAT'
+        alert(restAnimal); //'DOG', 'TIGER'
+    </script>
+</body>
+</html>

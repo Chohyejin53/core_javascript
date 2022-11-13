@@ -1,0 +1,70 @@
+/* base */
+*{ padding: 0; margin: 0; font-size: 12px; color: #666666; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+
+
+/* layout */
+header{ width: 1000px; height: 100px; margin: 0 auto; background-color: bisque; }
+section{ width: 1000px; height: 900px; margin: 0 auto; background-color: lightblue; }
+footer{ width: 1000px; height: 100px; margin: 0 auto; background-color: pink; }
+
+.tnav{ width: 1000px; height: 30px; background-color: orange; }
+header h1{ float: left; width: 150px; height: 70px; background-color: lightcyan; }
+#gnb{ float: left; width: 850px; height: 70px; }
+
+
+/* tnav */
+.tnav ul{ float: right; }
+.tnav li{ float: left; margin: 0 5px; line-height: 30px; }
+
+
+
+/* gnb */
+#gnb > ul > li{ 
+	float: left; width: 20%; height: 70px; text-align: center; line-height: 69px; 
+	position: relative; /* 자손인 subnav의 위치를 li기준에 맞추기 위해 */
+}
+#gnb .mainnav{
+	display: block; width: 100%; height: 100%; 
+	font-size: 16px; color: #333; font-weight: bold;
+}
+#gnb li:hover .mainnav{ color: red; }
+
+/* 메인메뉴 활성화 */
+#gnb .mainnav.active{ color: red; }
+
+
+/* subnav */
+.subnav{
+	width: 100%; height: 0; overflow: hidden;
+	line-height: 40px;
+	position: absolute; /* 뒤에 보일 컨텐츠보다 화면 깊이상 앞에 보여야 함 */
+	z-index: 1001; /* subbg보다 z-index수치가 높아야 함 */
+	top: 70px; left: 0;
+
+	transition: 0.3s ease-in-out;
+}
+.subnav a:hover{ text-decoration: underline; }
+
+#subbg{
+	width: 100%; height: 0;
+	background-color: rgba(0,255,0,0.5);
+	position: absolute; top: 100px; left: 0;
+	z-index: 1000; /* 서브메뉴보다 깊이상 아래 존재 */
+
+	transition: 0.3s ease-in-out;
+}
+
+
+
+/* 활성화 처리 */
+.subnav.active, #subbg.active{ height: 240px; }
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+/* base */
+*{ padding: 0; margin: 0; font-size: 12px; color: #666666; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+
+/* layout */
+header{ width: 1000px; height: 100px; margin: 0 auto; background-color: lightblue; }
+section{ width: 1000px; height: 900px; margin: 0 auto; background-color: antiquewhite; }
+footer{ width: 1000px; height: 100px; margin: 0 auto; background-color: lightcyan; }
+
+.tnav{ width: 1000px; height: 30px; background-color: orange; }
+header h1{ float: left; width: 150px; height: 70px; background-color: bisque; }
+#gnb{ float: left; width: 850px; height: 70px; }
+
+
+/* tnav */
+.tnav ul{ float: right; }
+.tnav li{ float: left; margin: 0 5px; line-height: 30px; }
+
+
+
+/* gnb */
+#gnb > ul > li{ float: left; width: 20%; height: 70px; text-align: center; line-height: 70px; position: relative; } /* 하위메뉴 위치 컨트롤 */
+#gnb > ul > li > a{ display: block; width: 100%; height: 100%; font-size: 16px; font-weight: bold; color: #333333; }
+#gnb > ul > li:hover > a{ color: #FF0000; }
+/* 제이쿼리에서 하위메뉴에 오버시 메인메뉴에도 색상이 변경되게 처리 */
+#gnb > ul > li > a.active{ color: #FF0000; }
+
+
+
+
+
+.subnav{ 
+    position: absolute; top: 60px; left: 0; width: 170px; height: 0; overflow: hidden; line-height: 40px; box-sizing: border-box; background-color: #FFFFFF; 
+    z-index: 1000; /* 메인이미지 슬라이더보다 위에 올라오게 처리하기 위해 z-index 사용 */
+
+    transition: 0.3s ease-in-out;
+}
+
+
+
+
+/* 활성화 */
+.subnav.active{ height: 240px; }
+
+

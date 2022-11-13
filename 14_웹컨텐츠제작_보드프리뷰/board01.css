@@ -1,0 +1,64 @@
+/* base */
+*{ padding: 0; margin: 0; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+
+
+body{ background-color: #ededed; }
+
+
+/* 공지사항 */
+.notice{
+    position: relative;
+    width: 500px; height: 40px; margin: 50px;
+    padding: 0px 10px; box-sizing: border-box;
+    background-color: #333;
+
+    overflow: hidden; /* 내 영역을 넘어가는 자손을 안보이게 처리 */
+}
+.notice h3{
+    float: left; /* 동생요소가 옆으로 올라옴 */
+    width: 100px; height: 40px;
+    color: #fff; line-height: 40px; font-size: 16px;
+}
+.notice ul{ /* 움직이는 요소 */
+    position: absolute; /* 자신의 현재 위치에서 상대적 이동 */
+    float: left; /* 남은 부모 영역에서 왼쪽으로 붙임 */
+    width: 300px; height: 40px;
+    top: 0; /* 변할 위치 속성 */
+    left: 100px;
+
+    opacity: 0;
+}
+.notice ul.active{ opacity: 1; transition: 0.2s; }
+
+.notice li{
+    width: 300px; height: 40px;
+    line-height: 40px; /* height와 line-height 수치가 같으면 리스트 세로 가운데 처리 */
+}
+.notice li a{ /* 중간에 li를 안쓰면 notice에 있는 다른 a태그로 선택될 수 있으므로 정확히 선택 */
+    float: left; /* 날짜가 옆에 올라와야 하므로 */
+    display: block; /* 영역이 존재해야 글자줄임 가능 */
+    width: 200px; height: 40px;
+    color: #fff; font-size: 14px;
+
+    /* 한줄 텍스트 줄임 공식 */
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+}
+.notice .date{
+    float: right;
+    color: #ccc; font-size: 14px;
+}
+.notice .more{
+    float: right; /* 부모 영역에 오른쪽으로 붙임 */
+    line-height: 40px; font-size: 14px; color: #fff;
+}
+
+
+
+
+
+
+
+
+

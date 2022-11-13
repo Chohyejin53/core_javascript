@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<title>패밀리사이트</title>
+		<link rel="stylesheet" href="fs02.css" />
+	</head>
+	<body>
+		<header></header>
+		<section></section>
+		<footer>
+			<div class="fSite">
+				<button id="fsBtn">
+					FAMILYSITE
+					<span class="icon"><img src="down_icon.png" alt="다운아이콘"></span>
+				</button>
+				<ul>
+					<!-- tabindex : 요소의 탭순서를 지정 -->
+					<!-- -1 : 초점받던 태그가 탭을 받지 못함 -->
+					<!-- 0 : 초점받지 못한 태그가 초점을 받고, 탭순서는 순서대로 자연스럽게 처리 -->
+					<li><a href="http://www.naver.com" target="_blank" tabindex="-1">네이버</a></li>
+					<!-- 초기상태에서 안보이지만 탭키누르면 초점이 가기 위해 무너지기때문에 초점을 못가게 막음
+						(원래 tabindex="0"으로 초점을 받을 수 있도록 처리 
+						그러나 가려진 상태이기때문에 초점받지않게 처리)
+					-->
+					<li><a href="http://www.daum.net" target="_blank" tabindex="-1">다음</a></li>
+					<li><a href="http://www.nate.com" target="_blank" tabindex="-1">네이트</a></li>
+					<li><a href="http://www.google.com" target="_blank" tabindex="-1">구글</a></li>
+				</ul>
+			</div>
+		</footer>
+		<script src="fs02.js"></script>
+	</body>
+</html>

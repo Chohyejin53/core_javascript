@@ -1,0 +1,52 @@
+/* base */
+*{ padding: 0; margin: 0; font-size: 12px; color: #666666; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+
+
+
+/* layout */
+header{ width: 1000px; height: 100px; margin: 0 auto; background-color: coral; }
+section{ width: 1000px; height: 700px; margin: 0 auto; background-color: antiquewhite; }
+footer{ width: 1000px; height: 200px; margin: 0 auto; background-color: lightblue; position: relative; } /* fSite의 위치 컨트롤 위해서 사용 */
+
+
+
+
+/* fSite */
+.fSite{ width: 150px; height: 130px; position: absolute; top: 10px; right: 10px; }
+.fSite button{ width: 150px; height: 30px; border: 1px solid #CCCCCC; border-bottom: none; box-sizing: border-box; color: #FFFFFF; background-color: #333333; text-align: left; padding-left: 10px; line-height: 29px; cursor: pointer; }
+.fSite button .icon{ float: right; display: block; width: 30px; height: 100%; border-left: 1px solid #CCCCCC; box-sizing: border-box; padding: 5px 0; text-align: center; }
+
+/* 하위리스트 */
+.fSite ul{ 
+    position: absolute; top: 30px; left: 0;
+    width: 150px; padding: 0 10px;  
+    border: 1px solid #ccc;
+    height: 0; /* 안보이게 처리 */
+    overflow: hidden;
+    box-sizing: border-box; background-color: #333333; 
+
+    transition: 0.3s ease-out; /* 변화에 시간차처리 */
+
+}
+.fSite li{ margin-bottom: 5px; }
+.fSite li a{ color: #FFFFFF; }/* 글자관련은 최종적으로 a가 지정 */
+
+
+
+
+/* 버튼 활성화 처리 : 자바스크립트에 클래스 컨트롤 */
+.fSite button.active .icon{ transform: rotate(180deg); border-left: none; border-right: 1px solid #CCCCCC; } /* 아이콘 180도 회전 */
+.fSite button.active + ul{ height: 100px; padding: 10px; } /* 높이를 처리 */
+
+
+
+
+
+
+
+
+
+
+

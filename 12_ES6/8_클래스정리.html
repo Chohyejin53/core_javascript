@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6문법</title>
+</head>
+<body>
+    
+
+    <script>
+        // 클래스 : 객체의  설계도 
+
+        //부모클래스 : 학생의 이름과 국영수점수를 받는 클래스 제작
+        class Score {
+            constructor(name, kor, eng, math){
+                this.name = name;
+                this.kor = kor;
+                this.eng = eng;
+                this.math = math;
+            }
+
+            scoreOutput(){
+                return this.name + '<br>' + '국어점수 : ' + this.kor  + '<br>' + '영어점수 : ' + this.eng  + '<br>' + '수학점수 : ' + this.math + '<br>';
+            }
+        }
+
+        //합계를 구하는 자손클래스
+        //틀린 이유 : 부모 코드블럭안에 넣는것 아님!! 코드블럭 분리하기!!
+        class Sum extends Score {
+
+            sumScore(){
+                return this.kor + this.eng + this.math;
+            }
+
+            sumOutput(){
+                return this.scoreOutput() + '합계 :' + this.sumScore() + '<br>';
+            }
+        }
+
+        //평균을 구하는 자손 클래스 
+        class Average extends Score {
+            
+            avgScore(){ 
+                return ((this.kor + this.eng + this.math)/3).toFixed(2);
+            }
+
+            avgOutput(){
+                return this.scoreOutput() + '평균 : ' + this.avgScore() + '<br>';
+            }
+        }
+
+        //인스턴스 생성 
+
+        let s01 = new Sum('홍길동', 90,80,95);
+        let s02 = new Average('홍길동', 90,80,95);
+
+        document.write(s01.scoreOutput());
+        document.write(s02.avgOutput());
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6문법</title>
+</head>
+<body>
+    
+
+    <script>
+        // 1. 변수명과 속성명이 같으면 값을 작성하지 않아도 됨 
+        let a = '테스트', b = 10, c = [10, 20, 30];
+        
+        let test = {
+            a,
+            b,
+            c
+        }
+
+        console.log (test.a);
+        console.log (test.b);
+        console.log (test.c);
+
+
+        // 2. 객체의 메서드 작성시 function이 생략이 가능 
+
+        var test2 = {
+            //원래문법
+            a : function (){
+                alert('함수키워드 작성');
+            },
+            //향상된 문법
+            b(){
+                alert('함수키워드 미작성');
+            }
+        }
+
+        test2.a();
+        test2.b();
+
+    </script>
+</body>
+</html>

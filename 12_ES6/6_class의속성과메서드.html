@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6문법</title>
+</head>
+<body>
+    
+
+    <script>
+        //클래스 선언 
+        class Car {
+            //속성선언  -  constructor()메서드 내부에 작성
+            constructor(name){  //매개변수 반드시 쓸것!!
+                this.brand = name;
+            } //쉼표쓰지않음
+
+
+            //메서드 선언
+            present(){
+                return '나는' + this.brand + '의 자동차를 소유하게 되었다.';
+            }
+        }
+
+        //인스턴스 생성
+        let mycar01 = new Car('벤츠');
+        let mycar02 = new Car('볼보');
+        let mycar03 = new Car('포드');
+
+        //출력
+        alert(mycar01.present());
+        alert(mycar02.present());
+        alert(mycar03.present());
+    </script>
+</body>
+</html>

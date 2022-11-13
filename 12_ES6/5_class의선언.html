@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6문법</title>
+</head>
+<body>
+    
+
+    <script>
+        //class : 객체를 만들기 위한 설계도 
+        //        객체를 생성하기 위한 속성과 메서드로 정의되어있는 객체
+        //        설계도를 바탕으로 여러개의 인스턴스를 생성
+        // 생성자함수와 다른 점 
+        // 1. function키워드 대신 class키워드 사용
+        // 2. 속성들을 constructor() 메서드 내부에 할당
+        
+        //클래스명은 첫글자를 대문자로 쓰는 것이 관례
+        class Car {
+            constructor(name){
+                this.brand = name;
+            }
+        }
+
+        //인스턴스 생성 
+        let car01 = new Car('BMW');
+        let car02 = new Car('Ford');
+
+        //출력
+        alert(car01.brand);
+        alert(car02.brand);
+
+        /* 
+            -class문법 
+            1. 선언 문법 
+            class 클래스명 {
+                constructor(매개변수){
+                    this.속성명 = 값;
+                }
+
+                메서드명(){
+
+                }
+            }
+
+            2.인스턴스생성문법 
+            let 인스턴스명 = new 클래스명();
+            
+         */
+    </script>
+</body>
+</html>

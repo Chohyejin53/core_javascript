@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6문법</title>
+</head>
+<body>
+    
+
+    <script>
+        //생성자함수 : 객체의 설계도 - 코드 절감(메모리절감)
+
+        //평균을 구하는 생성자함수 
+        function Score(name, kor, eng, math){
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this. math =  math;
+        }
+
+        //메서드 공통이라서 프로토타입으로 작성
+        Score.prototype.avg = function avg(){
+            return this.name + '의 평균 : ' + ( (this.kor + this.eng + this.math) / 3 ).toFixed(2);
+        }
+
+        //인스턴스 생성 
+        var s01 = new Score('홍길동', 90, 80, 75);
+        var s02 = new Score('김철수', 100, 80, 75);
+        var s03 = new Score('박영희', 80, 80, 75);
+
+        alert(s01.avg());
+        alert(s02.avg());
+        alert(s03.avg());
+    </script>
+</body>
+</html>

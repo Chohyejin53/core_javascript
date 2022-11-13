@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6문법</title>
+</head>
+<body>
+    <h3>2022 KBO 정규리그 순위</h3>
+    <ul id="listBox">
+    </ul>
+    <script>
+        //forEach() : 배열값을 반복하는 메서드 - 매개변수 사용이 map메서드와 같음
+        
+
+        const teams = ['SSG 랜더스', 'LG트윈스', '키움 히어로즈', 'KT 위즈', 'KIA 타이거즈', 'NC다이노스', '삼성 라이온즈', '롯데 자이언츠', '두산 베어스', '한화 이글스'];
+
+        //문서객체담기 
+        const listBox = document.getElementById('listBox');
+
+        let pTag = ''; //값을 재할당
+
+        teamsOutput = (team, index) => {
+            pTag += '<p>' + (index + 1) + '위 : ' + team + '</p>';
+        }
+        
+        teams.forEach(teamsOutput);
+
+        listBox.innerHTML = pTag;
+    </script>
+</body>
+</html>

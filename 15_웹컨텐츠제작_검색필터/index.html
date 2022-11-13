@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Search/Filter Menu</title>
+        <link rel="stylesheet" href="search.css">
+    </head>
+    <body>
+        <div class="coffeeBox">
+            <div class="leftBox">
+                <h3>OSSAM Coffee</h3>
+                <!-- 검색창 -->
+                <input type="text" id="coffeeSearch" placeholder="커피를 검색하세요.">
+                <!-- 커피리스트 -->
+                <ul id="coffeeMenu">
+                    <!-- data-영문 : 사용자정의 속성 -->
+                    <li><a href="#" data-price="4100">아메리카노</a></li>
+                    <li><a href="#" data-price="4500">카페라떼</a></li>
+                    <li><a href="#" data-price="5100">바닐라라떼</a></li>
+                    <li><a href="#" data-price="5100">카라멜라떼</a></li>
+                    <li><a href="#" data-price="5100">카페모카</a></li>
+                    <li><a href="#" data-price="6100">푸라푸치노</a></li>
+                </ul>
+            </div>
+            <div class="rightBox">
+                <h3>주문 내역</h3>
+                <h4>커피 : <span id="coffeeName"></span></h4>
+                <h4>가격 : <span id="coffeePrice"></span>원</h4>
+            </div>
+        </div>
+
+        <script src="search.js"></script>
+    </body>
+</html>

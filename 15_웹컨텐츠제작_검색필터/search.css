@@ -1,0 +1,23 @@
+*{ padding: 0; margin: 0; color: #fff; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+
+.coffeeBox{
+    width: 500px; max-height: 350px; overflow: hidden;
+    padding: 20px; box-sizing: border-box;
+    background-color: #333;
+}
+.leftBox{
+    float: left; width: 50%; max-height: 350px; overflow: hidden;
+    border-right: 1px solid #ccc; box-sizing: border-box;
+    padding: 10px;
+}
+.rightBox{
+    float: left; width: 50%; max-height: 350px; overflow: hidden;
+    box-sizing: border-box; padding: 10px;
+}
+h3{ margin-bottom: 20px; }
+input{ display: block; width: 100%; height: 30px; color: #333; padding: 0 10px; margin-bottom: 10px; box-sizing: border-box; border: none; }
+
+/* 리스트안보이게 처리 */
+li{ display: none; line-height: 30px; }

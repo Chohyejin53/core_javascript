@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/* base */
+*{ padding: 0; margin: 0; }
+li{ list-style: none; }
+a{ text-decoration: none; color: #333; }
+
+
+/* title */
+h3{ font-size: 24px; color: #333; margin: 20px; margin-bottom: 0; }
+
+/* tabbox */
+.tabbox{ width: 600px; height: 450px; border: 3px solid #333; margin: 20px; margin-top: 10px; }
+
+.tabbox .tabbtn{
+    width: 100%; height: 50px;
+    border-bottom: 3px solid #333; box-sizing: border-box;
+
+    display: flex; /* 자손들을 수평나열 처리 */
+}
+.tabbox .tabbtn li{
+    flex: 1; /* flexbox의 가로폭을 1:1:1:1:1 */
+    height: 100%; border-right: 3px solid #333; box-sizing: border-box;
+}
+.tabbox .tabbtn li:last-child{ border-right: none; }
+.tabbox .tabbtn a{
+    display: block; /* 원래 인라인요소여서 영역적용되지 않으므로 변경 */
+    width: 100%; height: 100%;
+    text-align: center; line-height: 47px;
+}
+
+/* JS에서 활성화 시킬 버튼 클래스 */
+.tabbox .tabbtn a.active{
+    background-color: #333; color: #fff; font-weight: bold;
+}
+
+
+.tabbox .contents_wrap{ 
+    width: 100%; height: 400px; 
+
+    overflow: hidden; /* 넘어간 자손이나 후손은 안보이게 처리 */
+}
+.tabbox .contents_wrap > div{ /* 탭컨텐츠 내부에 또 div태그를 쓸수도 있기 때문에 반드시 자손선택해주기 */
+    display: none; /* 처음엔 안보이게 처리 */
+    width: 100%; height: 400px;
+    padding: 44px 50px; box-sizing: border-box;
+}

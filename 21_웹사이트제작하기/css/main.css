@@ -5,7 +5,6 @@
     width: 100%;
     min-width: 1180px;
     min-height: 700px;
-    background-color: pink;
 }
 
 #mainSlider .swiper, #mainSlider .swiper-wrapper,  #mainSlider .swiper-slide, #mainSlider figure {
@@ -16,4 +15,167 @@
     display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover; /* 이미지 비율 고정으로 해당 사이즈에 보이게 처리 */
+    transform: scale(1.2); /* 처음에는 1.2배로 이미지를 키움 */
+}
+
+/* 활성화 슬라이드 클래스 : swiper-slide-active */
+#mainSlider .swiper-slide-active figure > img {
+    transform: scale(1);
+    transition: 8s ease-in;
+}
+
+
+/* 페이지네이션  */
+#mainSlider .swiper-pagination {
+    bottom: 40px;
+}
+
+#mainSlider .swiper-pagination-bullet {
+    width: 8px;
+    height: 20px;
+    border-radius: 0; /* 모서리 둥글지않게 처리 */
+    background-color: #fff;
+    opacity: 1;
+}
+
+#mainSlider .swiper-pagination-bullet-active { /* 활성 */
+    background-color: #ff8a3c;
+    transform: scaleY(1.8);
+    transition: 0.2s;
+}
+
+/* 이전다음버튼 */
+#mainSlider .swiper-button-next, #mainSlider .swiper-button-prev {
+    width: 120px;
+    height: 55px;
+}
+
+#mainSlider .swiper-button-next {
+    right: 0;
+    padding-left: 10px;
+    box-sizing: border-box;
+    justify-content: flex-start; /* flex가 기본적용되어 가로정렬 변경 */
+}
+
+#mainSlider .swiper-button-prev {
+    left: 0;
+    padding-right: 10px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+}
+
+#mainSlider .swiper-button-next::after, #mainSlider .swiper-button-prev::after {
+    content: '';  /* 글자 기호로 들어간 것을 제거 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 21;
+    transform: scaleX(0); /* 가로폭을 0% 처리 */
+    transition: 0.3s;
+}
+
+#mainSlider .swiper-button-next::after{
+    transform-origin: right center;
+}
+#mainSlider .swiper-button-prev::after {
+    transform-origin: left center;
+}
+
+
+#mainSlider .swiper-button-next .text, #mainSlider .swiper-button-prev .text {
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    z-index: 22;
+}
+
+#mainSlider .swiper-button-next::before, #mainSlider .swiper-button-prev::before {
+    content: '';  /* 글자 기호로 들어간 것을 제거 */
+    position: absolute;
+    /* top: 50%;
+    transform: translateY(50%); */
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 60px;
+    height: 2px;
+    background-color: #fff;
+    z-index: 23;
+}
+
+#mainSlider .swiper-button-next::before {
+    right: 0;
+}
+
+#mainSlider .swiper-button-prev::before {
+    left: 0;
+}
+
+/* 이전 다음 버튼 hover effect */
+#mainSlider .swiper-button-next:hover::after, #mainSlider .swiper-button-prev:hover::after {
+    transform: scaleX(1);
+} 
+#mainSlider .swiper-button-next:hover::before, #mainSlider .swiper-button-prev:hover::before {
+    background-color: #ff8a3c;
+} 
+
+#mainSlider .swiper-button-next:hover .text, #mainSlider .swiper-button-prev:hover .text {
+    color: #333;
+} 
+
+
+/* figcaption */
+#mainSlider .swiper-slide {
+    position: relative;
+}
+
+#mainSlider figcaption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 1180px;
+    height: 500px;
+    margin: auto;
+    padding-top: 70px;
+    text-align: center;
+    z-index: 15;
+    background-image: url(../images/main/main_icon.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+#mainSlider h3 span {
+    position: relative;
+    top: 50px; /* 원래위치보다 내린 후에 올라오게 처리 */
+    opacity: 0; /* 처음엔 안보이게 처리 */
+    font-size: 110px;
+    color: #fff;
+    line-height: 130px;
+}
+
+#mainSlider .swiper-slide-active h3 span {
+    top: 0;
+    opacity: 1;
+    transition: 0.2s ease-out;
+}
+
+/* progress */
+#mainSlider .swiper-progress {
+    position: absolute;
+    bottom: 0;
+    width: 0; /* 처음에는 폭이 없게 처리 */
+    height: 6px;
+    z-index: 50;
+    background-color: #ff8a3c;
+}
+
+#mainSlider .swiper-progress.active {
+    width: 100%; /* 가로폭을 꽉채움 */
+    transition: 8s; /* 슬라이드 한개가 보이는 시간 */
 }

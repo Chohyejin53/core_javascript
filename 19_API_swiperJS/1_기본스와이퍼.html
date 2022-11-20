@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Swiper JS</title>
+        <link rel="stylesheet" href="swiper-bundle.min.css">
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            .car {
+                width: 600px;
+                border: 5px solid black;
+                margin: 50px auto;
+            }
+            .car .swiper-wrapper {
+                width: 100%;
+                padding: 50px;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="car">
+            <div class="swiper"><!-- 슬라이드 전체묶음 : 슬라이드 + 버튼 -->
+                <div class="swiper-wrapper"> <!-- 슬라이드묶음 -->
+                    <div class="swiper-slide">
+                        <img src="images/color_car_02_01.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/color_car_02_02.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/color_car_02_03.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/color_car_02_04.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/color_car_02_05.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Swiper JS -->
+    <script src="swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".car .swiper", {});
+    </script>
+    </body>
+</html>

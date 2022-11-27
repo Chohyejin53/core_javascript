@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Cookie</title>
+</head>
+<body>
+    <script>
+        //쿠키 : 사용자의 컴퓨터에 저장되는 작은 텍스트 파일 데이터
+        //웹 서버가 웹 페이지를 브라우저로 보내면 연결이 종료되고, 서버는 사용자에대한 정보는 기억하지 않음
+        //쿠키는 사용자에 대한 정보를 기억하는 방법으로 활용
+
+        //쿠키 데이터 : 이름=값 => 쌍으로 저장됨
+        
+        //생성
+        document.cookie = "username = test; userpass=1234;";
+
+        //변경
+        document.cookie = "username=test2; userpass=5678;";
+
+        //삭제
+        document.cookie = "username=;userpass=;"
+
+
+        
+    </script>
+</body>
+</html>

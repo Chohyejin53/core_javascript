@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 에러</title>
+    </head>
+    <body>
+        <p id="test"></p>
+        <script>
+            //에러객체의 속성
+            //1. name : 오류의 이름을 반환 
+            //2. message : 오류 메세지를 문자열로 반환
+
+            //error name value 
+            //6. URI error : URI관련 함수를 잘못된 문자로 쓰는 경우 에러 발생
+            
+
+            const test = document.getElementById('test');
+
+            
+            try {
+                decodeURI('%%%'); //잘못된 URI값을 처리
+            }
+            catch(err) {
+                test.textContent = err.name;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 에러</title>
+    </head>
+    <body>
+        <p id="test"></p>
+        <script>
+            //에러객체의 속성
+            //1. name : 오류의 이름을 반환 
+            //2. message : 오류 메세지를 문자열로 반환
+
+            //error name value 
+            //1. range error : 숫자에서 범위를 벗어나면 오류가 발생
+
+            const test = document.getElementById('test');
+
+            //임의적으로 숫자 1을 담는 변수 
+            let num = 1;
+
+            try {
+                //toPrecision() : 숫자를 지정된 길이로 형식화
+                num.toPrecision(500);
+            }
+
+            catch(err) {
+                test.textContent = err.name;
+            }
+        </script>
+    </body>
+</html>

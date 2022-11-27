@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 에러</title>
+    </head>
+    <body>
+        <p>1~10사이의 숫자를 입력하시오.</p>
+        <input type="text" name="" id="numBox">
+        <button id="btn">테스트</button>
+        <p id="test"></p>
+        <script>
+            //throw : 사용자 지정 오류를 만드는 구문
+            //자바스크립트는 오류가 발생되면 일반적으로 중지가 되고, 오류 메세지가 생성
+            //throw는 자바스크립트의 예외를 발생시켜 일부로 오류를 생성
+
+            //입력상자에 1~10사이의 숫자를 입력한 것이 아닐 떄 오류 발생
+            //비어있음, 숫자가 아님, 숫자가 큼, 숫자가 작음 
+
+            //문서객체 선택 
+            const numBox = document.getElementById('numBox');
+            const btn = document.getElementById('btn');
+            const test = document.getElementById('test');
+
+            btn.addEventListener('click', function(){
+
+            
+                //기존에 들어간 에러메시지 제거     
+                test.textContent = '';
+
+                let v = numBox.value;
+
+                try{
+                    if( v == '') {
+                        throw '비어있음';
+                    }
+                    if(isNaN(v)) {
+                        throw'숫자가 아님';
+                    }
+                    if(v > 10){
+                        throw '숫자가 큼';
+                    }
+                    if(v < 1){
+                        throw '숫자가 작음';
+                    }
+                }
+                catch(err)  {
+                    test.textContent = '에러메시지 : ' + err;
+                }
+            });
+
+        </script>
+    </body>
+</html>

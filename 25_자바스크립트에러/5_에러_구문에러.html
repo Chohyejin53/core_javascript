@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 에러</title>
+    </head>
+    <body>
+        <p id="test"></p>
+        <script>
+            //에러객체의 속성
+            //1. name : 오류의 이름을 반환 
+            //2. message : 오류 메세지를 문자열로 반환
+
+            //error name value 
+            //3. syntax error : 구문이 잘못되면 에러가 발생
+            //4. eval error : eval() 함수가 잘못되면 오류가 발생 
+            //** 최신브라우저에서는 syntax error로 병합
+
+            const test = document.getElementById('test');
+
+            try {
+                eval("alert('안녕하세요)");  //eval error이지만 브라우저에는 SyntaxError로 반환됨
+            }
+            catch(err) {
+                test.textContent = err.name;
+            }
+        </script>
+    </body>
+</html>

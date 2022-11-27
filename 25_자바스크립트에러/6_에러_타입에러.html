@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 에러</title>
+    </head>
+    <body>
+        <p id="test"></p>
+        <script>
+            //에러객체의 속성
+            //1. name : 오류의 이름을 반환 
+            //2. message : 오류 메세지를 문자열로 반환
+
+            //error name value 
+            //5. type error : 데이터타입이 잘못 처리되면 에러가 발생
+            
+
+            const test = document.getElementById('test');
+
+            //숫자를 담는 변수 
+            let x = 100;
+
+            try {
+               x.toUpperCase();
+            }
+            catch(err) {
+                test.textContent = err.name;
+            }
+        </script>
+    </body>
+</html>

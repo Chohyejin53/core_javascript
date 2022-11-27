@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 에러</title>
+    </head>
+    <body>
+        <p id="test"></p>
+        <script>
+            //try{ } : 오류를 테스트 할 구문을 작성 
+            //catch(에러객체){ } : 오류를 처리할 수 있는 구문
+        
+            const test = document.getElementById('test');
+
+            try{
+                aalert('안녕하세요');
+            }
+            catch(err) {
+                //message : 에러객체의 속성 - 오류메세지를 문자열로 설정해서 반환
+                test.textContent = err.message;
+            };
+        </script>
+    </body>
+</html>

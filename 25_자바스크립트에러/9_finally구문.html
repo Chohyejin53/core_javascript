@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 에러</title>
+    </head>
+    <body>
+        <p>1~10사이의 숫자를 입력하시오.</p>
+        <input type="text" name="" id="numBox">
+        <button id="btn">테스트</button>
+        <p id="test"></p>
+        <script>
+            //finally{ } : 결과와 관계 없는 try catch 구문 후에 코드를 실행하는 구문
+
+            //입력상자에 1~10사이의 숫자를 입력한 것이 아닐 떄 오류 발생
+            //비어있음, 숫자가 아님, 숫자가 큼, 숫자가 작음 
+
+            //문서객체 선택 
+            const numBox = document.getElementById('numBox');
+            const btn = document.getElementById('btn');
+            const test = document.getElementById('test');
+
+            btn.addEventListener('click', function(){
+
+            
+                //기존에 들어간 에러메시지 제거     
+                test.textContent = '';
+
+                let v = numBox.value;
+
+                try{
+                    if( v == '') {
+                        throw '비어있음';
+                    }
+                    if(isNaN(v)) {
+                        throw'숫자가 아님';
+                    }
+                    if(v > 10){
+                        throw '숫자가 큼';
+                    }
+                    if(v < 1){
+                        throw '숫자가 작음';
+                    }
+                }
+                catch(err)  {
+                    test.textContent = '에러메시지 : ' + err;
+                }
+
+
+                //위의 구문에 에러가 있든 없든 발생하고 싶은 코드를 작성 
+                //입력상자 ㄱ밧을 비우고, 입력상자에 다시 초점가게 처리
+                finally {
+                    numBox,value = '';
+                    numBox.focus(); //focus는 이벤트, 메서드 모두 됨 
+                }
+            });
+
+        </script>
+    </body>
+</html>

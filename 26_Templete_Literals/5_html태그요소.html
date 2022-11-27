@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Templete Literals</title>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+
+        <script>
+            // ` : grave accent = back accent
+            // JS : 템플릿 리터럴 = 템플릿 스트링 = back tics
+
+            //${ } : 변수와 표현식을 문자열에 쉽게 삽입할 수 있는 방법을 제공
+            
+            let titleText = '웹 프론트엔드 언어';
+            let langText = ['HTML', 'CSS', 'JAVASCRIPT'];
+
+            const box = document.getElementById('box');
+
+            let html = `<h2>${titleText}</h2>`;
+
+            html += `<ul>`;
+            
+            //li는 반복 
+
+            for(let i of langText){
+                html +=`<li> ${i}</li>`;
+            }
+            
+            html += `</ul>`;
+
+            box.innerHTML = html;
+        </script>
+    </body>
+</html>

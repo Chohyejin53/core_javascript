@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Templete Literals</title>
+    </head>
+    <body>
+        
+
+        <script>
+            // ` : grave accent = back accent
+            // JS : 템플릿 리터럴 = 템플릿 스트링 = back tics
+
+            //${ } : 변수와 표현식을 문자열에 쉽게 삽입할 수 있는 방법을 제공
+            //연결연산자를 사용하지않기 위해서 백틱사용!! 
+            //변수사이를 연결할때 따옴표는 연결연산자 (+)로 이어주어야함!!
+
+            let firstName = 'Tony';
+            let lastName = 'stark';
+
+            let text = `환영합니다~ ${firstName} ${lastName}`;
+
+            alert(text);
+
+            let dollar = 1329;
+            let num = 5;
+
+            let result = `환전한 금액 : ${dollar * num} 원`
+
+            alert(result);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 api</title>
+</head>
+<body>
+    <!-- 영상자체에 옵션 추가 : version=3&enablejsapi=1 -->
+    <iframe width="560" height="315" id="youtube_video" src="https://www.youtube.com/embed/d9IxdwEFk1c?version=3&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <hr>
+    <button id="play">재생</button>
+    <button id="stop">멈춤</button>
+    <button id="paused">일시정지</button>
+    <script src="http://www.youtube.com/iframe_api"></script>
+    <script>
+        // 1. 문서객체 선택 
+        const playBtn = document.getElementById('play');
+        const stopBtn = document.getElementById('stop');
+        const pausedBtn = document.getElementById('paused');
+
+        //유튜브 iframe을 시작할 것을 호출
+        window.onYouTubeIframeAPIReady = function (){
+            // 생성자함수 매개변수에 iframe id값을 작성
+            player = new YT.Player('youtube_video', {
+            });
+        }
+
+        //재생버튼 클릭 이벤트
+        playBtn.addEventListener('click', function(){
+            player.playVideo(); // 유튜브가 api로 만든 재생메서드
+        });
+
+        //멈춤버튼 클릭이벤트 
+        stopBtn.addEventListener('click', function(){
+            player.stopVideo(); // 유튜브가 api로 만든 재생메서드
+        });
+
+        //일시정지버튼 클릭이벤트 
+        pausedBtn.addEventListener('click', function(){
+            player.pauseVideo(); // 유튜브가 api로 만든 재생메서드   // paused 아니고  pauseVideo로 불러와야함!!
+        });
+
+        // 참고 페이지 
+        //유튜브 api
+        //https://developers.google.com/youtube/v3/getting-started?hl=ko
+
+        //유튜브 iframe api
+        // https://developers.google.com/youtube/iframe_api_reference?hl=ko#Requirements
+    </script>
+</body>
+</html>

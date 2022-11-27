@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 api</title>
+</head>
+<body>
+    <!-- iframe : 외부페이지를 현재 페이지로 끌어오는 태그 -->
+    <!-- 
+        *유튜브 영상컨트롤 옵션 
+        1. 문법 : src속성의 주소 뒤에 작성
+            url?옵션명=값&옵션명=값                    //파라미터라고 부름 
+        2. 옵션의 종류 
+            1) autoplay : 자동실행 , 1 혹은 0으로 작성  - 음소거와 같이 써야 사용 가능 
+            2) mute : 음소거, 1 혹은 0으로 작성 
+            3) controls : 영상컨트롤바 유무, 1 혹은 0으로 작성
+            4) loop : 반복재생, 1 혹은 0으로 작성
+     -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/d9IxdwEFk1c?autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>

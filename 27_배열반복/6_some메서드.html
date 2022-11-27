@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>배열반복</title>
+    </head>
+    <body>
+        <p id="testBox"></p>
+        <script>
+            //some() : 일부 배열 값이 테스트를 통과하는 확인하는 메서드 
+            
+            // const nums = [45, 4, 9, 16, 25];
+
+            // function testFx(value, index, array){
+            //     return value > 20;
+
+            // }
+
+            // let numsTest = nums.some(testFx);
+
+            // const testBox = document.getElementById('testBox');
+
+            // testBox.innerHTML = numsTest;
+
+
+            //true 반환 - 일부라도 20이 넘는 숫자가 배열에 있기 떄문
+
+
+             const nums = [15, 4, 9, 16, 5];
+
+            function testFx(value, index, array){
+                return value > 20;
+
+            }
+
+            let numsTest = nums.some(testFx);
+
+            const testBox = document.getElementById('testBox');
+
+            testBox.innerHTML = numsTest;
+
+            //false 반환  - 20이 넘는 숫자가 배열에 없기 떄문
+
+        </script>
+</body>
+</html>

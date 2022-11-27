@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>배열반복</title>
+    </head>
+    <body>
+        <p id="testBox"></p>
+        <script>
+            //entries() : 키/값 쌍으로 반복
+
+            const test = ['바나나', '오렌지', '사과', '딸기'];
+            const newTest = test.entries();
+
+            const testBox = document.getElementById('testBox');
+
+            for(let x of newTest) {
+                testBox.innerHTML += x + '<br>';
+            }
+
+
+        </script>
+</body>
+</html>

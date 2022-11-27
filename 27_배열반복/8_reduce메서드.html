@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>배열반복</title>
+    </head>
+    <body>
+        <p id="testBox"></p>
+        <script>
+            //reduce() :매개변수의 함수를 통해서 단일 값으로 축소 (ex. 5개의 값이 있을 때 1개로 축소) - 합계나 평균 구할 떄 사용
+            
+
+            const nums = [45, 4, 9, 16, 25];
+
+            //합계구하기
+            function testFx(total, value, index, array){
+                //total : 초기값 / 기존값 반환
+                return total + value;
+
+            }
+
+            let numsTest = nums.reduce(testFx);
+
+            const testBox = document.getElementById('testBox');
+
+            testBox.innerHTML = numsTest;
+
+            //99 - 합계
+
+        </script>
+</body>
+</html>

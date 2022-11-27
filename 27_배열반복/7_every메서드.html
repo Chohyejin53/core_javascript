@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>배열반복</title>
+    </head>
+    <body>
+        <p id="testBox"></p>
+        <script>
+            //every() : 모든 배열 값이 테스트를 통과하는 확인하는 메서드 
+            
+            
+             const nums = [45, 4, 9, 16, 25];
+
+            function testFx(value, index, array){
+                return value > 20;
+
+            }
+
+            let numsTest = nums.every(testFx);
+
+            const testBox = document.getElementById('testBox');
+
+            testBox.innerHTML = numsTest;
+
+            //false 반환  - 배열 값의 모든 숫자가 20이 넘지않기 떄문
+
+        </script>
+</body>
+</html>

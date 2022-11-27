@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>배열반복</title>
+    </head>
+    <body>
+        <p id="testBox"></p>
+        <script>
+            //map() :매개변수의 함수를 통해서 새로운 배열을 만드는 메서드
+            
+
+            const nums = [45, 4, 9, 16, 25];
+
+            function square(x){
+                return x * x;
+            }
+
+            const newNums = nums.map(square);
+            const testBox = document.getElementById('testBox');
+            testBox.innerHTML = newNums;
+            
+        </script>
+</body>
+</html>

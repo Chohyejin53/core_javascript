@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>배열반복</title>
+    </head>
+    <body>
+        
+        <script>
+            //for of : ES6부터 추가된 반복문 
+            /* 
+                for(let value of object){
+
+                }
+            */
+
+            /* 
+                for(let key in object) {
+
+                }
+            */
+
+
+            /* 
+                let 객체 = {
+                    key name : value,
+                    (키명) : (값),
+                    ...
+                }
+
+                let 배열 = [ 값1, 값2, 값3]; //키가 인덱스 번호!!!!!!!!!!!!!!
+            */
+
+
+            let array = [10, 20, 30];
+            console.log('========= for of ========');  //i는 값을 의미
+            
+            for(let i of array) {
+                console.log(i);
+            }
+
+            console.log('========= for in ========'); //i는 키를 의미
+            
+            for(let i in array) {
+                console.log(i);
+            }
+
+            console.log('========= for in을 통한 값 반환 ========');
+
+            for(let i in array){ // i는 키를의미
+                console.log(array[i]);
+            }
+
+        </script>
+</body>
+</html>

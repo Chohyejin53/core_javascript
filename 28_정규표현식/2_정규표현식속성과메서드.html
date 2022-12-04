@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - 정규표현식</title>
+</head>
+<body>
+    
+    <script>
+        //속성 : 속성명;
+        //1. flags : 플래그를 문자열로 반환 ex) /^abc/gi.flags 
+        //2. source : 표현식을 문자열로 반환
+        //3. global : 플래그 g여보를 불표현식으로 반환
+
+        //메서드 : 메서드명()
+        //1. exec() : 정규식.exec(문자열) : 일치하는 하나의 정보를 반환
+        //2. test() : 정규식.test(문자열) : 일치 여부를 true/false로 반환
+        //3. match() : 문자열.match(정규식) : 일치하는 문자열을 배열로 반환
+
+        let test = `
+            꼭꼭 숨어라 
+            모두모두 숨어라 
+            꼭꼭 숨어라 
+            빨리빨리 숨어라
+        `;
+
+        let execTest = /숨어라/.exec(test);
+        console.log(execTest);
+
+        let testTest = /숨어라/.test(test);
+        console.log(testTest);
+
+        let searchTest = test.search(/숨어라/);
+        console.log(searchTest);
+    </script>
+</body>
+</html>

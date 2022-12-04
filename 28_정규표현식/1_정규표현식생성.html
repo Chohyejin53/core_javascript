@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - 정규표현식</title>
+</head>
+<body>
+    
+    <script>
+        //정규표현식(Regular Expression) : 문자열 검색 패턴을 형성하는 일련의 문자를 의미
+        //간단한 문자 검색 : 이메일, 아이디, 패스워드 검사할 떄 사용
+        //기능 : 문자 검색, 변경, 추출
+
+        //문법1 - 변수 선언식 
+        // variable 변수명 = 표현식/플래그;
+        let regExp01 = /^abc/gi;
+
+        //문법2 - 생성자함수식 
+        //variable 변수명 = newRegExp(표현식, 플래그);
+        let regExp02 = new RegExp("abc", "gi"); 
+    </script>
+</body>
+</html>

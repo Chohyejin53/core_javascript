@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <row>
+    <name>진</name>
+    <group>방탄소년단</group>
+    <agent>빅히트</agent>
+    <debut>2013</debut>
+  </row>
+  <row>
+    <name>찬열</name>
+    <group>엑소</group>
+    <agent>SM</agent>
+    <debut>2012</debut>
+  </row>
+  <row>
+    <name>제니</name>
+    <group>블랙핑크</group>
+    <agent>YG</agent>
+    <debut>2016</debut>
+  </row>
+  <row>
+    <name>예지</name>
+    <group>ITZY</group>
+    <agent>JYP</agent>
+    <debut>2019</debut>
+  </row>
+</rows>

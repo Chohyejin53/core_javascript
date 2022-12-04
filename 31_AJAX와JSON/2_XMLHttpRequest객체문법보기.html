@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX와 JSON</title>
+</head>
+<body>
+    <h3>아래에 메모장 데이터 불러오기</h3>
+    <p id="test"></p>
+    <script>
+        // XMLHttpRequest객체 : 서버 데이터를 요청하거나 불러오는 객체
+        // 모든 최신브라우저는 모두 사용 가능 
+        // 웹 서버와 데이터 교환을 하고, 전체 페이지를 다시 로드하지 않고 웹 페이지의 일부를 업데이트할 수 있음
+        
+        //객체 사용 순서 
+        //1. 객체생성 
+        //variable 변수명 = new XMLHttpRequest();
+        //2. 명령을 실생할 콜백함수 정의 
+        /* 
+            변수명.onload = function(){
+                
+            }
+        */
+
+        //3. 데이터를 받고 요청 보내기 
+        /* 
+            변수명.open('GET', '읽어올 파일 경로'); 
+            변수명.send();
+        */
+
+        //보안상의 이유로 도메인간 액세스를 허용하지 않음 
+        //읽어올 파일(JSON, XML등)이 동일한 서버에 있어야함
+
+        //모든 객체는 속성과 메서드를 갖고 있음 
+        //메서드
+        //1. open(method, url, async, user, password)
+        //1-1. method : 요청 타입을 GET 혹은 POST로 지정
+        //      - GET: 지정된 리소스에서 데이터 요청할 떄 사용
+        //           : 기록이 남아서 민감한 데이터는 사용X, R길이에 저한이 있음 
+        //      - POST :리소스를 생성 / 업데이트하기 위해 서버로 데이터 전송하는 데 사용 
+        //              : 기록이 남지않아서 민감한 데이터 사용, 길이 제한없음
+
+        //1-2. url : 파일의 경로 
+        //1-3. async : 비동기로하면 true, 동기로하면 false 
+        //1-4. user : 선택해서 사용, 사용자 이름 지정 
+        //1-5. password : 선택해서 사용, 비밀번호 지정
+        
+        //2. send() : 서버에 요청을 보냄
+        //2-1. 매개변수 없이 사용 : GET방식일 떄 사용 
+        //2-1. 매개변수에 문자열을 사용 : Post방식을 때 사용
+
+        //속성
+        //1.onload : 요청을 수신(load)할 때 호출할 함수를 정의 
+        //2.onreadystatechange : readyState 속성이 변경 될때 호출할 함수를 정의 
+
+        //3.redyState : XMLHttpRequest 객체의 상태를 유지 
+        //- 0 : 초기화되지 않은 요청 
+        //- 1 :서버연결 설정됨
+        //- 2 : 요청접수 
+        //- 3 : 처리요청
+        //- 4 : 요청완료 및 응답처리 
+
+
+        //4.responseText : 응답데이터를 문자열로 반환 
+        //5.responseXML : 응답데이터를 XML데이터로 반환 
+        //6.status : 요청상태 번호를 반환
+        //- 200 : OK상태 
+        //- 403 : 금지 
+        //- 404 : 찾을 수 없음
+
+        //7.statusText : 요청상태를 텍스트로 반환 
+
+
+        //데이터 전송 형식 
+        //서버와 클라이언트 컴퓨터가 데이터를 주고 받을 때 형식
+        //1. CSV : 각 항목을 쉼표로 구분해 데이터를 표현 
+        //2. XML : HTML처럼 태그로 데이터를 표현
+        //3. JSON : 자바스크립트 객체표기방법으로 데이터 표현
+    </script>
+</body>
+</html>

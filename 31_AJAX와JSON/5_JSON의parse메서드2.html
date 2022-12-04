@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX와 JSON</title>
+</head>
+<body>
+    <ul id="bts">
+        
+    </ul>
+    <script>
+        //JSON 데이터
+        const originData = '["진", "RM", "슈가", "제이홉", "지민", "뷔"]';
+
+        //JSON배열로 변경 -  JSON.parse() : 문자열을 자바스크립트 객체로 변환 
+        const changeData = JSON.parse(originData);
+
+        //문서객체 선택 
+        const bts = document.getElementById('bts');
+
+        //li태그 담을 변수  
+        let list = '';
+
+        for(let i in changeData) {
+            list += '<li>' + changeData[i] + '</li>';
+        }
+
+        bts.innerHTML = list;
+        
+    </script>
+</body>
+</html>

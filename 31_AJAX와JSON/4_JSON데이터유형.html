@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX와 JSON</title>
+</head>
+<body>
+    <script>
+        //JSON : Javascript Object Nation의 약자로 데이터 교환 형식 
+        //JSON 값의 유형 : 문자열, 숫자, 객체, 배열, true/false, null
+
+        //1. 문자열 : 큰따옴표로 감쌈 
+        { "name" : "진" }
+
+        //2. 숫자 : 따옴표 내에 적지 않고, 정수 또는 부동 소수점이어야 함
+        { "age" : 31}
+
+        //3. boolean : 키워드여서 따옴표 내에 작성하지 않음 
+        { "email" : true}
+        { "email" : false}
+
+        //4. 객체 : 값을 객체로 표현 가능 
+        {
+            "member" : {"name" : "진", "age" : 31, "birth" : 1992}
+
+        }
+
+        //5. 배열 : 대괄호안에 값을 작성 
+        {
+            "member" : ["진", "RM", "슈가"]
+        }
+
+        //6. null : 값을 비워두는 키워드 
+        [
+            { "name" : "김남준", "stageName" : "RM", "age" :29 },
+            { "name" : "박지민", "stageName" : null, "age" :28 }
+        ]
+    </script>
+</body>
+</html>

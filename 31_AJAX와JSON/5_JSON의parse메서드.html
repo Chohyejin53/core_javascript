@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX와 JSON</title>
+</head>
+<body>
+    <h2> 이름 : <span class="name"></span></h2>
+    <h2> 나이 : <span class="age"></span></h2>
+    <h2> 출생년도 : <span class="birth"></span></h2>
+    <script>
+        //JSON을 사용하는 이유는 웹 서버와 데이터를 교환하기 위해 사용
+        //웹서버에서 데이터를 수신할 때는 항상 데이터가 문자열
+
+
+        const originData = '{ "name" : "진", "age" : 31, "birth" : 1992 }';
+
+        console.log(typeof(originData));
+
+        //JSON.parse() : 문자열을 자바스크립트 객체로 변환 
+        const changeData = JSON.parse(originData);
+
+        console.log(typeof(changeData));
+
+        //객체 값 호출 
+        //객체.속성명; 
+        //객체.메서드명(); - JSON에서는 함수를 담을 수 없기 때문에 메서드로 활용은 불가능
+
+        //JSON에서 가져온 데이터를 담는 변수 앞에는 $기호를 적는 것이 관례
+        const $name = document.querySelector('.name');
+        const $age = document.querySelector('.age');
+        const $birth = document.querySelector('.birth');
+    
+        $name.textContent = changeData.name;
+        $age.textContent = changeData.age;
+        $birth.textContent = changeData.birth;
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX와 JSON</title>
+</head>
+<body>
+    <script>
+        //서버에 데이터 보낼 때, 문자열로 변경해서 보내기 
+
+        //JS를 객체 선언
+        const originData = {
+            name : '진',
+            age : 31,
+            birth : 1992
+        }
+
+        alert(originData);
+
+        //stringify() : JS객체를 문자열로 변경 
+        const changeData = JSON.stringify(originData);
+        alert(changeData);
+        alert(typeof(changeData));
+
+
+
+        //엑셀데이터 JSON이나 XML로 변경해주는 사이트
+        /* http://shancarter.github.io/mr-data-converter/ */
+    </script>
+</body>
+</html>

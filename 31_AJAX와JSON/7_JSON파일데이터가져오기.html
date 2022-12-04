@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX와 JSON</title>
+</head>
+<body>
+    <table border="1" id="idolsTable">
+
+    </table>
+    <script>
+        //문서객체선택 
+        const idolsTable = document.getElementById('idolsTable');
+
+        //데이터를 불러오는 함수 선언 
+        function loadDoc(){
+            //1. 객체생성 
+            const xhttp = new XMLHttpRequest();
+
+            //2. 응답이 준비되었을 때 명령을 담는 콜백함수 지정
+            /* xhttp.onload = function(){
+
+            } */
+
+            xhttp.onreadystatechange = function(){ 
+                //4 : 요청이 다 된 상태 
+                //200 : 응답 준비가 된 상태
+                if(this.readyState == 4 && this.status == 200){
+                    //responseText : 응답데이터를 문자열 반환 
+                    //parse() : JS객체로  변경
+                    const idosData = JSON.parse(this.responseText);
+
+                    //테이블 태그를 담는 변수 
+                    let tableOutput = '';
+
+                    for(let i in idosData){
+                        tableOutput += '<tr>';
+                        
+                        //JSON에서 가져온 데이터를 담는 변수 앞에는 $를 쓰는 것이 관례 
+                        const $name = idosData[i].name;
+                        const $group = idosData[i].group;
+                        const $agent = idosData[i].agent;
+                        const $debut = idosData[i].debut;
+
+
+                        //td태그에 각각 담기 
+                        tableOutput += '<td>' + $name + '</td>';
+                        tableOutput += '<td>' + $group + '</td>';
+                        tableOutput += '<td>' + $agent + '</td>';
+                        tableOutput += '<td>' + $debut + '</td>';
+
+
+                        tableOutput += '</tr>';
+                    }
+
+                    idolsTable.innerHTML = tableOutput;
+                }
+            }
+
+            //3. 요청 보내기 
+            xhttp.open('GET','idols_data.json',true);
+            xhttp.send();
+        }
+
+
+        //초기실행 
+        loadDoc();
+    </script>
+</body>
+</html>

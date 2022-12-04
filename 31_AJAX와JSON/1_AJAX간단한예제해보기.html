@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX와 JSON</title>
+</head>
+<body>
+    <h3>아래에 메모장 데이터 불러오기</h3>
+    <p id="test"></p>
+    <script>
+        //AJAX (Asynchronous Javascript And XML) : 비동기식 자바스크립트와 XML
+        //특정 프로그래밍 언어가 아닌 화면을 구현하는 방식
+        
+        //브라우저의 내장객체인 XMLHttpRequest 객체를 사용
+    
+        //문서객체 선택 
+        const test = document.getElementById('test');
+
+        //함수 선언 
+        function loadDoc(){
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function(){
+                test.innerHTML = this.responseText; 
+            }
+
+            xhttp.open('GET', 'test.txt');
+            xhttp.send();
+        }
+
+        //함수 호출 
+        loadDoc();
+    </script>
+</body>
+</html>

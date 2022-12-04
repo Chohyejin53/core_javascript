@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX와 JSON</title>
+</head>
+<body>
+    <table border="1" id="idolsTable">
+
+    </table>
+    <script>
+        //문서객체선택 
+        const idolsTable = document.getElementById('idolsTable');
+
+        //데이터를 불러오는 함수 선언 
+        function loadDoc(){
+            //1. 객체생성 
+            const xhttp = new XMLHttpRequest();
+
+            //2. 응답이 준비되었을 때 명령을 담는 콜백함수 지정
+            /* xhttp.onload = function(){
+
+            } */
+
+            xhttp.onreadystatechange = function(){ 
+                //4 : 요청이 다 된 상태 
+                //200 : 응답 준비가 된 상태
+                if(this.readyState == 4 && this.status == 200){
+                    //responseXML : 요청된 데이터를 XML로 가져옴
+                    const idolsData = this.responseXML;
+                    const idols = idolsData.getElementsByTagName('row');
+
+                    let tableOutput = '';
+                    
+                    //사이사이 공백이 발생해서 for in 문 사용 XXXX
+                    for(let i = 0; i <idols.length; i++) {
+                        tableOutput += '<tr>';
+
+                        tableOutput += '<td>' + idols[i].getElementsByTagName('name')[0].childNodes[0].nodeValue + '</td>';
+                        tableOutput += '<td>' + idols[i].getElementsByTagName('group')[0].childNodes[0].nodeValue + '</td>';
+                        tableOutput += '<td>' + idols[i].getElementsByTagName('agent')[0].childNodes[0].nodeValue + '</td>';
+                        tableOutput += '<td>' + idols[i].getElementsByTagName('debut')[0].childNodes[0].nodeValue + '</td>';
+
+                        tableOutput += '</tr>';
+                    }
+
+                    idolsTable.innerHTML = tableOutput;
+                }
+            }
+
+            //3. 요청 보내기 
+            xhttp.open('GET','idols_data.xml',true);
+            xhttp.send();
+        }
+
+
+        //초기실행 
+        loadDoc();
+    </script>
+</body>
+</html>

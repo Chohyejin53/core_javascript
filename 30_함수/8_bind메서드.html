@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - 함수</title>
+</head>
+<body>
+    <p id="test"></p>
+    <script>
+        //메서드만 담은 객체 
+        const person01 = {
+            firstName : 'Tony', 
+            lastName : 'Stark',
+            fullName : function(){ //메서드
+                return this.firstName + ' ' + this.lastName;
+            },
+            // dislay : function(){
+            //     alert(this.firstName());
+            // }
+        }
+
+        const person02 = {
+            firstName : 'Natasha', 
+            lastName : 'Romanoff',
+        }
+        
+        const test = document.getElementById('test');
+
+        let x = person01.fullName.bind(person02);
+
+        //bind() : 다른 객체의 메서드를 빌려 씀 
+        setTimeout(function(){
+            test.innerHTML = x();
+        },3000);
+
+    </script>
+</body>
+</html>

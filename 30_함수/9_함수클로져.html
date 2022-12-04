@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - 함수</title>
+</head>
+<body>
+    <button id="btn01">버튼01</button>
+    <button id="btn02">버튼02</button>
+    <button id="btn03">버튼03</button>
+    <script>
+        //closure : 전역변수를 지역변수로 만들어서 비공개 처리 
+
+        //전역변수 : 자바스크립트 전역에 작성
+        let a = 4;
+        function test01(){
+            let a = 10; // 지역변수 
+            return a * a; 
+
+            // 이름이 같은 것을 쓰더라도 전역 변수와 지역 변수는 다른 변 수 
+            // 한쪽에서 수정한다고 해서 바뀌지 않음
+        }
+
+
+
+        console.log(test01()); //100 반환
+        console.log(a); // 4 반환
+
+        //키워드 없이 사용한 변수는 전역변수 
+        function test02(){
+            b=20;
+        }
+
+        test02();
+        console.log(b*b);
+
+        //전역변수 : 다른 페이지로 이동하거나 창을 닫을 때 사라짐, 그 전까지는 유지
+        //지역변수 : 함수가 호출될 때 생성하고, 함수가 완료되면 삭제 
+
+        //버튼을 누르면 1씩 증가하는 함수 
+        //문제 : 다른 프로그램에서 변수를 건드리면 문제가 발생
+        const btn = document.getElementById('btn01');
+        
+        //전역변수로 증가되는 숫자 담기
+        let num01 = 0;
+
+        function add01(){
+            num01++;
+            console.log(num01);
+        }
+
+        btn01.addEventListener('click',add01);
+
+        //함수의 지역 변수로 1씩 증가하는 함수 
+        //문제 : 함수를 호출할때마다 지역변수가 재설정되서 작동되지 않음
+        const btn02 = document.getElementById('btn02');
+        function add02(){
+            let num02 = 0;
+            num02++;
+            console.log(num02);
+        }
+
+        btn02.addEventListener('click',add02);
+
+
+        //즉시호출함수로 클로져 처리 
+        const btn03 = document.getElementById('btn03');
+        
+        //변수는 함수가 리턴한 값을 담는 변수이지, 실제 함수를 담은 변수가 아님!
+
+        //num03의 값을 0으로 설정하고, 함수 표현식을 반환 
+        //이 떄, 리턴을 통한 함수가 상위 범위인 num03에 접근 가능해짐 
+        //이것을 closure라고 부름
+        const add03 = (function(){
+            let num03 = 0;
+            return function(){
+                num03++;
+                return num03;
+            }
+        })(); 
+
+        btn03.addEventListener('click', function(){
+            console.log(add03());
+        });
+
+
+        //장점 
+        //1. 데이터 보존이 가능
+        //2. 정보접근을 제한(캡슐화) - 클로저 모듈 패턴을 사용해 객체에 담아 여러개의 함수를 리턴하도록 만든다.
+        //3. 모듈화에 유리 - 함수의 재사용성을 극대화해서 함수를 하나의 독립적인 부품으로 분리 가능
+    </script>
+</body>
+</html>

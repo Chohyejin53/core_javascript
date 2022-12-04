@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - 함수</title>
+</head>
+<body>
+    <script>
+        //메서드만 담은 객체 
+        
+        
+        const person = {
+            fullName : function(gender, country){ //메서드
+                return this.firstName + ' ' + this.lastName + '는 ' + gender + '이고 ' + country + '에 삽니다';
+            }
+        }
+
+        const person01 = {
+            firstName : 'Tony', 
+            lastName : 'Stark',
+        }
+
+        const person02 = {
+            firstName : 'Natasha', 
+            lastName : 'Romanoff',
+        }
+
+        //call() : 미리 정의된 자바스크립트 메서드 - 다른 객체에 속한 메서드를 사용 
+        //매개변수를 인수로 사용시, 그냥 나열해서 작성
+        let x01 = person.fullName.call(person01, '남성', '미국');
+        let x02 = person.fullName.call(person02, '여성', '러시아');
+        console.log(x01);
+        console.log(x02);
+
+
+        //apply() : 다른 객체에 속한 메서드를 사용
+        //매개변수를 인수로 사용시 배열에 담아서 처리
+
+        let x03 = person.fullName.apply(person01,['male','america']);
+        console.log(x03);
+    </script>
+</body>
+</html>

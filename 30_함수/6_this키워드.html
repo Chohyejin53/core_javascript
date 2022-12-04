@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - 함수</title>
+</head>
+<body>
+    <button type="button">클릭</button>
+    <script>
+        //this키워드
+        //1. 객체 코드 블록 내부에 사용 : 객체의 자신을 참조 
+
+        const person = {
+            firstName : 'Tony', // 속성
+            lastName : 'Stark',
+            fullName : function(){ //메서드
+                return this.firstName + ' ' + this.lastName;
+            }
+        }
+
+        console.log(person.fullName());
+
+        //2. 혼자 써있는 경우 : 전역객체를 의미
+        let x = this;
+        console.log(x);
+
+        //3. 함수 내부에 써있는 경우 : 전역 객체를 의미 
+        function test01(){
+            return this;
+        }
+        console.log(test01());
+
+
+        //4. 이벤트내부에서의 this : 이벤트 받는 요소를 의미
+        const btn = document.querySelector('button');
+        btn.addEventListener('click',function(){
+            this.style.backgroundColor = 'red';
+        });
+    </script>
+</body>
+</html>

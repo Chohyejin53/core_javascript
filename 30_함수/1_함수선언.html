@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - 함수</title>
+</head>
+<body>
+    
+    <script>
+        //함수 : 코드의 집합 
+
+        //1. 기본함수 선언 
+        function test01(a,b) {
+            return a * b;
+
+        }
+        
+        console.log(test01(10,5));
+
+        //2. 변수에 담는 함수 (익명함수)
+        const test02 = function(a,b){
+            return a * b;
+        }
+
+        console.log(test02(10,5));
+
+
+        //3. 생성자함수(객체방식) 
+        const test03 = new Function('a','b', 'return a * b');
+
+        console.log(test03(10,5));
+
+        //4. 화살표함수 (ES6) 
+        const test04 = (a,b) => a * b;
+        
+        console.log(test04(10,5));
+
+        //5. 즉시 호출 함수 - 선언과 호출 동시에 실행하는 함수 
+        (function(){
+            console.log(10*5);
+        })();
+
+        
+    </script>
+</body>
+</html>
